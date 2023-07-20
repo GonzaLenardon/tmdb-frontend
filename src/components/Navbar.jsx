@@ -1,6 +1,6 @@
 export const Navbar = () => {
   return (
-    <nav className="navbar navbar-dark bg-dark fixed-top">
+    <nav className="navbar navbar-dark bg-dark sticky-top">
       <div className="container-fluid">
         <a className="navbar-brand" href="#">
           Offcanvas dark navbar
