@@ -6,21 +6,22 @@ import "swiper/css";
 import "swiper/css/effect-coverflow";
 import "swiper/css/pagination";
 import "../css/index.css";
-import { popularMovie } from "../redux/thunks/movieThunks";
+import { Upcomming } from "../redux/thunks/movieThunks";
 import { EffectCoverflow, Pagination } from "swiper/modules";
 
-export const PopularMovie = () => {
+export const UpCommingMovie = () => {
   const dispatch = useDispatch();
-  const popular = useSelector((state) => state.movie.popular);
+
+  const upcomming = useSelector((state) => state.movie.upcomming);
 
   useEffect(() => {
-    dispatch(popularMovie());
+    dispatch(Upcomming());
   }, []);
 
   return (
     <>
-      <div className="container-fluid">
-        <p className="fs-1 fw-bolder text-warning text-center">Popular</p>
+      <div className="container-fluid ">
+        <p className="fs-1 fw-bolder text-warning text-center">Up Comming</p>
         <Swiper
           effect={"coverflow"}
           grabCursor={true}
@@ -38,7 +39,7 @@ export const PopularMovie = () => {
           modules={[EffectCoverflow, Pagination]}
           className="mySwiper"
         >
-          {popular.map((movie) => (
+          {upcomming.map((movie) => (
             <>
               <SwiperSlide key={movie.id}>
                 <MovieCard key={movie.id} movie={movie} />
