@@ -8,7 +8,7 @@ export const MovieCard = ({ movie }) => {
     console.log("movie", id);
   };
   return (
-    <div className="card bg-success">
+    <div className="card">
       <img
         src={`https://image.tmdb.org/t/p/w200/` + movie.poster_path}
         className="card-img-top"

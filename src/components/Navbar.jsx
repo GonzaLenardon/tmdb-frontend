@@ -1,10 +1,29 @@
+import { Link } from "react-router-dom";
+
 export const Navbar = () => {
   return (
     <nav className="navbar navbar-dark bg-dark sticky-top">
-      <div className="container-fluid">
-        <a className="navbar-brand" href="#">
-          Offcanvas dark navbar
-        </a>
+      <div className="container-fluid my-3">
+        <Link to={"/"}>
+          <img
+            src="/public/logo.svg"
+            alt="Bootstrap"
+            height="auto"
+            width="100%"
+          />
+        </Link>
+        <form className="d-flex" role="search">
+          <input
+            className="form-control me-2"
+            type="search"
+            placeholder="Search"
+            aria-label="Search"
+          />
+          <button className="btn btn-outline-info" type="submit">
+            Search
+          </button>
+        </form>
+
         <button
           className="navbar-toggler"
           type="button"
