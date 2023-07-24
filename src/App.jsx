@@ -1,7 +1,7 @@
 import { HomePage } from "./Pages/HomePage";
 import { Navbar } from "./components/Navbar";
 import { Routes, Route } from "react-router";
-import { Home } from "./pages/Home";
+
 import { DetailsMovie } from "./components/DetailsMovie";
 
 function App() {
