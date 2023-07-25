@@ -51,7 +51,7 @@ export const MovieId = (id) => async (dispatch) => {
     },
   };
 
-  fetch(`https://api.themoviedb.org/3/movie/${id}`, options)
+  fetch(`https://api.themoviedb.org/3/movie/${id}?language=es`, options)
     .then((response) => response.json())
     .then((response) => {
       dispatch(getMovie(response));

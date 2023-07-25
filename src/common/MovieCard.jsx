@@ -1,7 +1,7 @@
 import { useNavigate } from "react-router";
 
 export const MovieCard = ({ movie }) => {
-  const navigator = useNavigate("/movie");
+  const navigator = useNavigate();
 
   const handleMovie = (id) => {
     navigator(`/movie/${id}`);
