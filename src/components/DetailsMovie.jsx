@@ -2,7 +2,8 @@ import { useParams } from "react-router";
 import { useEffect } from "react";
 import "../css/style.css";
 import { useSelector, useDispatch } from "react-redux";
-import { MovieId, Actors } from "../redux/thunks/movieThunks";
+import { Actors, MovieId } from "../redux/thunks/movieThunks";
+import { ActorsMovie } from "./ActorsMovie";
 
 export const DetailsMovie = () => {
   const { id } = useParams();
@@ -15,26 +16,23 @@ export const DetailsMovie = () => {
     dispatch(MovieId(id));
     dispatch(Actors(id));
 
-    //https://api.themoviedb.org/3/movie/{movie_id}/credits
-    //?api_key=a41ce438a072ada11ff592899af27e5b/
-
     console.log("migen", movie);
   }, []);
 
   return (
     <>
-      <div className="container-xl mt-5 text-body">
+      <div className="container-xl my-5 text-body">
         <div className="row pt-5 align-items-center  ">
           <div className="col-sm-4">
             <img
               src={`https://image.tmdb.org/t/p/w400/${movie.poster_path}`}
-              className="rounded mx-auto d-block "
+              className="rounded mx-auto d-block posterMovie"
               alt="imagen"
             />
           </div>
 
-          <div className="col-sm-8 border border-5 ">
-            <div className="row display-3 fw-bolder text-info border">
+          <div className="col-sm-8 ">
+            <div className="row display-2 fw-bolder titleMovie">
               {movie.original_title}
             </div>
 
@@ -65,8 +63,8 @@ export const DetailsMovie = () => {
           className="bgimage"
           src={`https://image.tmdb.org/t/p/w400/` + movie.poster_path}
           alt={movie.id}
-        />
-  */}
+          />
+        */}
     </>
   );
 };
