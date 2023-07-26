@@ -4,6 +4,7 @@ import {
   getMovie,
   getUpcomming,
 } from "../slice/movieSlice";
+import { getActor } from "../slice/actorSlice";
 
 export const popularMovie = () => async (dispatch) => {
   try {
@@ -55,6 +56,24 @@ export const MovieId = (id) => async (dispatch) => {
     .then((response) => response.json())
     .then((response) => {
       dispatch(getMovie(response));
+    })
+    .catch((err) => console.error(err));
+};
+
+export const Actors = (idMovie) => async (dispatch) => {
+  const options = {
+    method: "GET",
+    headers: {
+      accept: "application/json",
+      Authorization:
+        "Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiJhNDFjZTQzOGEwNzJhZGExMWZmNTkyODk5YWYyN2U1YiIsInN1YiI6IjY0NTQyMTNlYzA0NDI5MDE4NTcxZWY2MCIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.24myZbli-YVUUBWijwkbZ0MS3l3fjW7azMcNEuLMpHY",
+    },
+  };
+
+  fetch(`https://api.themoviedb.org/3/movie/${idMovie}/credits`, options)
+    .then((response) => response.json())
+    .then((response) => {
+      dispatch(getActor(response));
     })
     .catch((err) => console.error(err));
 };
