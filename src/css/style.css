@@ -17,6 +17,15 @@ body {
   background: linear-gradient(37deg, #0b7e9c, #317443, #393a4c);
 }
 
+.posterMovie {
+  box-shadow: 5px 5px 5px #95c4d0;
+}
+
+.titleMovie {
+  color: rgb(18, 48, 56);
+  text-shadow: 5px 5px 5px #0b7e9c;
+}
+
 .angled-gradient {
   background: linear-gradient(70deg, #00b3e5, #90cea1);
 }

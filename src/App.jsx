@@ -2,7 +2,7 @@ import { HomePage } from "./Pages/HomePage";
 import { Navbar } from "./components/Navbar";
 import { Routes, Route } from "react-router";
 
-import { DetailsMovie } from "./components/DetailsMovie";
+import { MoviePage } from "./pages/MoviePage";
 
 function App() {
   return (
@@ -10,7 +10,7 @@ function App() {
       <Navbar />
       <Routes>
         <Route path="/" element={<HomePage />} />
-        <Route path="/movie/:id" element={<DetailsMovie />} />
+        <Route path="/movie/:id" element={<MoviePage />} />
       </Routes>
 
       {/*  <Home /> */}
