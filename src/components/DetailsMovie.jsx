@@ -2,7 +2,7 @@ import { useParams } from "react-router";
 import { useEffect } from "react";
 import "../css/style.css";
 import { useSelector, useDispatch } from "react-redux";
-import { MovieId } from "../redux/thunks/movieThunks";
+import { MovieId, Actors } from "../redux/thunks/movieThunks";
 
 export const DetailsMovie = () => {
   const { id } = useParams();
@@ -13,6 +13,7 @@ export const DetailsMovie = () => {
 
   useEffect(() => {
     dispatch(MovieId(id));
+    dispatch(Actors(id));
 
     //https://api.themoviedb.org/3/movie/{movie_id}/credits
     //?api_key=a41ce438a072ada11ff592899af27e5b/
