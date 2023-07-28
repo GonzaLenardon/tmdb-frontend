@@ -8,6 +8,7 @@ import "swiper/css/pagination";
 import "../css/index.css";
 import { popularMovie } from "../redux/thunks/movieThunks";
 import { EffectCoverflow, Pagination } from "swiper/modules";
+import { Navigation } from "../common/Navigation";
 
 export const PopularMovie = () => {
   const dispatch = useDispatch();
@@ -34,7 +35,7 @@ export const PopularMovie = () => {
             modifier: 1,
             slideShadows: true,
           }}
-          pagination={true}
+          pagination={false}
           modules={[EffectCoverflow, Pagination]}
           className="mySwiper"
         >
@@ -45,6 +46,7 @@ export const PopularMovie = () => {
               </SwiperSlide>
             </>
           ))}
+          <Navigation />
         </Swiper>
       </div>
     </>

@@ -6,7 +6,7 @@ import {
 } from "../slice/movieSlice";
 import { getActor } from "../slice/actorSlice";
 
-export const popularMovie = () => async (dispatch) => {
+/* export const popularMovie = () => async (dispatch) => {
   try {
     let peticion = await fetch(
       "https://api.themoviedb.org/3/movie/popular?api_key=a41ce438a072ada11ff592899af27e5b"
@@ -15,6 +15,27 @@ export const popularMovie = () => async (dispatch) => {
     dispatch(getPopular(resp.results));
   } catch (error) {
     console.log(error);
+  }
+}; */
+
+export const popularMovie = () => async (dispatch) => {
+  try {
+    const options = {
+      method: "GET",
+      headers: {
+        accept: "application/json",
+        Authorization: import.meta.env.VITE_TOKEN,
+      },
+    };
+
+    let peticion = await fetch(
+        "https://api.themoviedb.org/3/movie/popular?page=5",
+        options
+      ),
+      resp = await peticion.json();
+    dispatch(getPopular(resp.results));
+  } catch (err) {
+    console.error(err);
   }
 };
 
@@ -65,8 +86,7 @@ export const Actors = (idMovie) => async (dispatch) => {
     method: "GET",
     headers: {
       accept: "application/json",
-      Authorization:
-        "Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiJhNDFjZTQzOGEwNzJhZGExMWZmNTkyODk5YWYyN2U1YiIsInN1YiI6IjY0NTQyMTNlYzA0NDI5MDE4NTcxZWY2MCIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.24myZbli-YVUUBWijwkbZ0MS3l3fjW7azMcNEuLMpHY",
+      Authorization: import.meta.env.VITE_TOKEN,
     },
   };
 
