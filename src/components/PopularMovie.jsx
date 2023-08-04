@@ -8,15 +8,16 @@ import "swiper/css/pagination";
 import "../css/index.css";
 import { popularMovie } from "../redux/thunks/movieThunks";
 import { EffectCoverflow, Pagination } from "swiper/modules";
-import { Navigation } from "../common/Navigation";
+import { NavPopular } from "../common/NavPopular";
 
 export const PopularMovie = () => {
   const dispatch = useDispatch();
   const popular = useSelector((state) => state.movie.popular);
+  const page = useSelector((state) => state.movie.pagination.pagePopular);
 
   useEffect(() => {
-    dispatch(popularMovie());
-  }, []);
+    dispatch(popularMovie(page));
+  }, [page]);
 
   return (
     <>
@@ -46,7 +47,7 @@ export const PopularMovie = () => {
               </SwiperSlide>
             </>
           ))}
-          <Navigation />
+          <NavPopular />
         </Swiper>
       </div>
     </>

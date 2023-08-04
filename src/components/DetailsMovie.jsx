@@ -3,7 +3,6 @@ import { useEffect } from "react";
 import "../css/style.css";
 import { useSelector, useDispatch } from "react-redux";
 import { Actors, MovieId } from "../redux/thunks/movieThunks";
-import { ActorsMovie } from "./ActorsMovie";
 
 export const DetailsMovie = () => {
   const { id } = useParams();
@@ -15,8 +14,6 @@ export const DetailsMovie = () => {
   useEffect(() => {
     dispatch(MovieId(id));
     dispatch(Actors(id));
-
-    console.log("migen", movie);
   }, []);
 
   return (

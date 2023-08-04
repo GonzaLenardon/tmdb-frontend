@@ -9,7 +9,7 @@ const actorSlice = createSlice({
   initialState,
   reducers: {
     getActor: (state, action) => {
-      state.actors = action.payload.cast;
+      state.actors = action.payload?.cast || [];
     },
   },
 });

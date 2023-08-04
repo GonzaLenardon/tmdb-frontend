@@ -8,15 +8,18 @@ import "swiper/css/pagination";
 import "../css/index.css";
 import { ratedMovie } from "../redux/thunks/movieThunks";
 import { EffectCoverflow, Pagination } from "swiper/modules";
+import { NavRate } from "../common/NavRate";
+import { Sniper } from "../common/sniper";
 
 export const RateMovie = () => {
   const dispatch = useDispatch();
 
   const rated = useSelector((state) => state.movie.rated);
+  const page = useSelector((state) => state.movie.pagination.pageRate);
 
   useEffect(() => {
-    dispatch(ratedMovie());
-  }, []);
+    dispatch(ratedMovie(page));
+  }, [page]);
 
   return (
     <>
@@ -47,6 +50,7 @@ export const RateMovie = () => {
             </>
           ))}
         </Swiper>
+        <NavRate />
       </div>
     </>
   );
