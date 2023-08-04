@@ -18,7 +18,7 @@ import { getActor } from "../slice/actorSlice";
   }
 }; */
 
-export const popularMovie = () => async (dispatch) => {
+export const popularMovie = (page) => async (dispatch) => {
   try {
     const options = {
       method: "GET",
@@ -29,7 +29,7 @@ export const popularMovie = () => async (dispatch) => {
     };
 
     let peticion = await fetch(
-        "https://api.themoviedb.org/3/movie/popular?page=5",
+        `https://api.themoviedb.org/3/movie/popular?page=${page}`,
         options
       ),
       resp = await peticion.json();
@@ -39,27 +39,45 @@ export const popularMovie = () => async (dispatch) => {
   }
 };
 
-export const ratedMovie = () => async (dispatch) => {
+export const ratedMovie = (page) => async (dispatch) => {
   try {
-    let peticion = await fetch(
-      "https://api.themoviedb.org/3/movie/top_rated?api_key=a41ce438a072ada11ff592899af27e5b"
+    const options = {
+      method: "GET",
+      headers: {
+        accept: "application/json",
+        Authorization: import.meta.env.VITE_TOKEN,
+      },
+    };
+
+    const peticion = await fetch(
+      `https://api.themoviedb.org/3/movie/top_rated?page=${page}`,
+      options
     );
-    let resp = await peticion.json();
+    const resp = await peticion.json();
     dispatch(getRated(resp.results));
-  } catch (error) {
-    console.log(error);
+  } catch (err) {
+    console.error(err);
   }
 };
 
-export const Upcomming = () => async (dispatch) => {
+export const Upcomming = (page) => async (dispatch) => {
   try {
+    const options = {
+      method: "GET",
+      headers: {
+        accept: "application/json",
+        Authorization: import.meta.env.VITE_TOKEN,
+      },
+    };
+
     const peticion = await fetch(
-      "https://api.themoviedb.org/3/movie/upcoming?api_key=a41ce438a072ada11ff592899af27e5b"
+      `https://api.themoviedb.org/3/movie/upcoming?page=${page}`,
+      options
     );
     const resp = await peticion.json();
     dispatch(getUpcomming(resp.results));
-  } catch (error) {
-    console.log(error);
+  } catch (err) {
+    console.error(err);
   }
 };
 

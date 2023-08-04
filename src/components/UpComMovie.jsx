@@ -8,15 +8,18 @@ import "swiper/css/pagination";
 import "../css/index.css";
 import { Upcomming } from "../redux/thunks/movieThunks";
 import { EffectCoverflow, Pagination } from "swiper/modules";
+import { NavUpCom } from "../common/NavUpCom";
 
-export const UpCommingMovie = () => {
+export const UpComMovie = () => {
   const dispatch = useDispatch();
 
   const upcomming = useSelector((state) => state.movie.upcomming);
 
+  const page = useSelector((state) => state.movie.pagination.pageUpcom);
+
   useEffect(() => {
-    dispatch(Upcomming());
-  }, []);
+    dispatch(Upcomming(page));
+  }, [page]);
 
   return (
     <>
@@ -47,6 +50,7 @@ export const UpCommingMovie = () => {
             </>
           ))}
         </Swiper>
+        <NavUpCom />
       </div>
     </>
   );
