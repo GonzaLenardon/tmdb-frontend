@@ -24,6 +24,17 @@ export const Navbar = () => {
           </button>
         </form>
 
+        <Link to={"/signup"}>
+          <button type="button" className="btn btn-warning">
+            SignUp
+          </button>
+        </Link>
+        <Link to={"/login"}>
+          <button type="button" className="btn btn-warning">
+            Login
+          </button>
+        </Link>
+
         <button
           className="navbar-toggler"
           type="button"

@@ -17,6 +17,10 @@ body {
   background: linear-gradient(37deg, #0b7e9c, #317443, #393a4c);
 }
 
+.form {
+  background-color: #90cea1;
+}
+
 .posterMovie {
   box-shadow: 5px 5px 5px #95c4d0;
 }
