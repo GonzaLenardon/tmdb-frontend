@@ -1,6 +1,5 @@
 import UseInput from "../hooks/UseInput";
 import { AddUser } from "../redux/thunks/userThunks";
-import { useState } from "react";
 import { useNavigate } from "react-router";
 import { ToastContainer, toast, Slide } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";

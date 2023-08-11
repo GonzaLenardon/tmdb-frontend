@@ -1,30 +1,67 @@
-import React from "react";
+import { ToastContainer, toast, Slide } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+import UseInput from "../hooks/UseInput";
+import { login } from "../redux/thunks/userThunks";
 
 export const Login = () => {
-  const f = document.querySelectorAll(".form-login");
+  const email = UseInput();
+  const password = UseInput();
 
-  const handleLogin = (e) => {
+  function msg({ mensaje, peticion }) {
+    toast[peticion](mensaje);
+  }
+
+  const handelLogin = (e) => {
     e.preventDefault();
-    f.reset();
+
+    const loginUser = {
+      email: email.value,
+      pass: password.value,
+    };
+
+    login(loginUser).then((user) => msg(user));
   };
 
   return (
-    <div className="container bg-warning vh-100">
-      <form onSubmit={handleLogin} className="row">
-        <div>
-          <input type="text" name="email" placeholder="Ingrese su email" />
-        </div>
-        <div>
-          <input
-            type="text"
-            name="password"
-            placeholder="ingrese su password"
-          />
-        </div>
-        <div>
-          <button type="submit">Ingresar</button>
-        </div>
-      </form>
-    </div>
+    <>
+      <ToastContainer
+        position="top-right"
+        autoClose={3000}
+        hideProgressBar={false}
+        newestOnTop={false}
+        closeOnClick
+        rtl={false}
+        pauseOnFocusLoss
+        draggable
+        pauseOnHover
+        theme="colored"
+        transition={Slide}
+      />
+      <div className="container-fluid rounded form w-25 p-5 mt-5">
+        <form onSubmit={handelLogin}>
+          <div className="mb-3">
+            <label className="form-label">Email address</label>
+            <input
+              type="email"
+              className="form-control"
+              id="email"
+              aria-describedby="emailHelp"
+              {...email}
+            />
+          </div>
+
+          <div className="mb-3">
+            <label className="form-label">Password</label>
+            <input
+              type="password"
+              className="form-control"
+              id="Password"
+              {...password}
+            />
+          </div>
+          <button className="btn btn-primary">Submit</button>
+        </form>
+      </div>
+    </>
   );
 };
