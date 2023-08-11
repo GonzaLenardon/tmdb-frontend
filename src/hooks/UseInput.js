@@ -1,5 +1,4 @@
 import { useState } from "react";
-import { useToast } from "react-toastify";
 
 const UseInput = () => {
   const [value, setValue] = useState("");
