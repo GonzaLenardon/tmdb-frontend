@@ -43,22 +43,23 @@ export const login = async (user) => {
     };
 
     const peticion = await fetch(`http://localhost:3000/user/login`, options);
-    console.log("peticion", peticion);
-    const invalidResp = await peticion.json();
-    let result = "";
+    let response = {};
 
     if (peticion.ok) {
-      result = {
-        mensaje: `Logged User`,
+      const data = await peticion.json();
+      response = {
+        user: data.name,
+        mensaje: `${data.name} is logged`,
         peticion: "success",
       };
     } else {
-      result = {
-        mensaje: invalidResp.respuesta,
+      response = {
+        user: "",
+        mensaje: `invalid data`,
         peticion: "error",
       };
     }
-    return result;
+    return response;
   } catch (error) {
     console.log(error);
   }

@@ -5,9 +5,12 @@ import { MoviePage } from "./pages/MoviePage";
 import { Signup } from "./components/Signup";
 import { Login } from "./components/Login";
 import { useEffect } from "react";
-import axios from "axios";
+import { setUser } from "./redux/slice/userSlice";
+import { useDispatch } from "react-redux";
 
 function App() {
+  const dispatch = useDispatch();
+
   useEffect(() => {
     token();
   }, []);
@@ -23,6 +26,7 @@ function App() {
     console.log(peticion);
     const res = await peticion.json();
     console.log(res);
+    dispatch(setUser(res.name));
   };
 
   return (
