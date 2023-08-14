@@ -1,16 +1,8 @@
-import { useSelector } from "react-redux";
 import { Link } from "react-router-dom";
-import { useDispatch } from "react-redux";
 import { setUser } from "../redux/slice/userSlice";
+import { ButtonUser } from "./ButtonUser";
 
 export const Navbar = () => {
-  const logged = useSelector((state) => state.user.user);
-  const dispatch = useDispatch();
-
-  const handlelogout = () => {
-    dispatch(setUser(""));
-  };
-
   return (
     <nav className="navbar navbar-dark bg-dark sticky-top">
       <div className="container-fluid my-3">
@@ -40,23 +32,7 @@ export const Navbar = () => {
           </button>
         </Link>
 
-        {logged ? (
-          <Link to={"/"}>
-            <button
-              type="button"
-              className="btn btn-warning"
-              onClick={handlelogout}
-            >
-              Logout
-            </button>
-          </Link>
-        ) : (
-          <Link to={"/login"}>
-            <button type="button" className="btn btn-warning">
-              Login
-            </button>
-          </Link>
-        )}
+        <ButtonUser />
 
         <button
           className="navbar-toggler"
