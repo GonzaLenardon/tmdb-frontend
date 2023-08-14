@@ -2,10 +2,15 @@ import { ToastContainer, toast, Slide } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import UseInput from "../hooks/UseInput";
 import { login } from "../redux/thunks/userThunks";
+import { useDispatch } from "react-redux";
+import { setUser } from "../redux/slice/userSlice";
+import { useNavigate } from "react-router";
 
 export const Login = () => {
   const email = UseInput();
   const password = UseInput();
+  const dispatch = useDispatch();
+  const navigator = useNavigate();
 
   function msg({ mensaje, peticion }) {
     toast[peticion](mensaje);
@@ -18,8 +23,14 @@ export const Login = () => {
       email: email.value,
       pass: password.value,
     };
+    login(loginUser).then((user) => {
+      dispatch(setUser(user.user));
+      msg(user);
+    });
 
-    login(loginUser).then((user) => msg(user));
+    setTimeout(() => {
+      navigator("/");
+    }, 4000);
   };
 
   return (
