@@ -64,3 +64,17 @@ export const login = async (user) => {
     console.log(error);
   }
 };
+
+export const logout = async () => {
+  try {
+    const options = {
+      method: "POST",
+      headers: { "Content-type": "application/json; charset=UTF-8" },
+      credentials: "include",
+    };
+
+    await fetch("http://localhost:3000/user/logout", options);
+  } catch (error) {
+    console.log(error);
+  }
+};

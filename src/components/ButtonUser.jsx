@@ -3,6 +3,7 @@ import { useDispatch } from "react-redux";
 import { setUser } from "../redux/slice/userSlice";
 import { useNavigate } from "react-router";
 import { Link } from "react-router-dom";
+import { logout } from "../redux/thunks/userThunks";
 
 export const ButtonUser = () => {
   const logged = useSelector((state) => state.user.user);
@@ -10,6 +11,7 @@ export const ButtonUser = () => {
   const navigator = useNavigate();
 
   const handlelogout = () => {
+    logout();
     dispatch(setUser(""));
     navigator("/");
   };
