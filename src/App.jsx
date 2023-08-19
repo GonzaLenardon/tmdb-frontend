@@ -26,7 +26,7 @@ function App() {
     console.log(peticion);
     const res = await peticion.json();
     console.log(res);
-    dispatch(setUser(res.name));
+    dispatch(setUser({ name: res.name, email: res.email }));
   };
 
   return (
