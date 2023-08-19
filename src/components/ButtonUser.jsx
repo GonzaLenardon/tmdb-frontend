@@ -6,7 +6,7 @@ import { Link } from "react-router-dom";
 import { logout } from "../redux/thunks/userThunks";
 
 export const ButtonUser = () => {
-  const logged = useSelector((state) => state.user.user);
+  const logged = useSelector((state) => state.user.name);
   const dispatch = useDispatch();
   const navigator = useNavigate();
 

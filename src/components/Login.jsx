@@ -23,14 +23,16 @@ export const Login = () => {
       email: email.value,
       pass: password.value,
     };
-    login(loginUser).then((user) => {
-      dispatch(setUser(user.user));
-      msg(user);
-    });
+    login(loginUser)
+      .then((user) => {
+        dispatch(setUser({ name: user.name, email: user.email }));
+        msg(user);
+        setTimeout(() => {
+          if (user.peticion == "success") navigator("/");
+        }, 4000);
+      })
 
-    setTimeout(() => {
-      navigator("/");
-    }, 4000);
+      .catch((error) => console.log(error));
   };
 
   return (

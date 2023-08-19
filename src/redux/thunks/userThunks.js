@@ -48,13 +48,15 @@ export const login = async (user) => {
     if (peticion.ok) {
       const data = await peticion.json();
       response = {
-        user: data.name,
+        name: data.name,
+        email: data.email,
         mensaje: `${data.name} is logged`,
         peticion: "success",
       };
     } else {
       response = {
-        user: "",
+        name: "",
+        email: "",
         mensaje: `invalid data`,
         peticion: "error",
       };
