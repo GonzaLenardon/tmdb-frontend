@@ -80,3 +80,22 @@ export const logout = async () => {
     console.log(error);
   }
 };
+
+export const getUser = async (email) => {
+  try {
+    const options = {
+      method: "GET",
+      headers: { "Content-type": "application/json; charset=UTF-8" },
+      credentials: "include",
+    };
+
+    const peticion = await fetch(
+      `http://localhost:3000/user/${email}`,
+      options
+    );
+    const data = await peticion.json();
+    return data;
+  } catch (error) {
+    console.log(error);
+  }
+};

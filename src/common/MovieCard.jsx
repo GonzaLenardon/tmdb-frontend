@@ -25,7 +25,6 @@ export const MovieCard = ({ movie }) => {
       />
       <div className="card-body">
         <h5 className="card-title">{movie.original_title}</h5>
-
         {email ? (
           <div className="position-fixed top-0 end-0 m-2">
             <button
@@ -38,7 +37,7 @@ export const MovieCard = ({ movie }) => {
           </div>
         ) : (
           ""
-        )}
+        )}{" "}
       </div>
     </div>
   );

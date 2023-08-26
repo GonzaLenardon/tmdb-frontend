@@ -7,6 +7,7 @@ import { Login } from "./components/Login";
 import { useEffect } from "react";
 import { setUser } from "./redux/slice/userSlice";
 import { useDispatch } from "react-redux";
+import { Favorites } from "./pages/Favorites";
 
 function App() {
   const dispatch = useDispatch();
@@ -32,11 +33,13 @@ function App() {
   return (
     <>
       <Navbar />
+
       <Routes>
         <Route path="/" element={<HomePage />} />
         <Route path="/signup" element={<Signup />} />
         <Route path="/login" element={<Login />} />
         <Route path="/movie/:id" element={<MoviePage />} />
+        <Route path="/movie/favorites" element={<Favorites />} />
       </Routes>
 
       {/*  <Home /> */}
