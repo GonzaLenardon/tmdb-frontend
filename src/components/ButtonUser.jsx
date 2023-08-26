@@ -36,9 +36,11 @@ export const ButtonUser = () => {
           </button>
           <ul className="dropdown-menu">
             <li>
-              <button className="dropdown-item" type="button">
-                Favoritos
-              </button>
+              <Link to="/movie/favorites">
+                <button className="dropdown-item" type="button">
+                  Favoritos
+                </button>
+              </Link>
             </li>
             <li>
               <button className="dropdown-item" type="button"></button>
