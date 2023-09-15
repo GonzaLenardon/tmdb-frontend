@@ -18,29 +18,31 @@ export const DetailsMovie = () => {
 
   return (
     <>
-      <div className="container-xl my-5 text-body">
-        <div className="row pt-5 align-items-center  ">
-          <div className="col-sm-4">
+      {/* <div className="container-fluid text-body d-flex justify-content-center mb-5">*/}
+      <div className="container-sm mt-5">
+        {/* <div className="row w-75 pt-5"> */}
+        <div className="row d-flex justify-content-center">
+          <div className="col-12 col-sm-6 col-lg-4  mb-5">
             <img
               src={`https://image.tmdb.org/t/p/w400/${movie.poster_path}`}
-              className="rounded mx-auto d-block posterMovie"
+              className="rounded mx-auto img-fluid posterMovie"
               alt="imagen"
             />
           </div>
 
-          <div className="col-sm-8 ">
-            <div className="row display-2 fw-bolder titleMovie">
+          <div className="col col-sm-6 col-lg-8 d-flex flex-column justify-content-center mb-5">
+            <div className="col-12 display-2 fw-bolder titleMovie ">
               {movie.original_title}
             </div>
 
-            <div className="row fs-2 fw-bolder">
+            <div className="col-12 fs-2 fw-bolder font-color">
               {
                 `${movie.release_date}`.slice(0, 4)
                 /* ${movie.release_date}`.split("-").reverse().join("-") */
               }
             </div>
 
-            <div className="row fs-2 fw-bolder">
+            <div className="col-12 fs-2 fw-bolder font-color">
               {gen.map((gene) => {
                 genero.push(gene.name);
               })}
@@ -48,10 +50,8 @@ export const DetailsMovie = () => {
               {`${genero}`.split(",").join("  /  ")}
             </div>
 
-            <div className="row fs-5 fw-bolder">
-              <label className="row fs-2">Overview</label>
-              {movie.overview}
-            </div>
+            <div className="col-12 fs-2 fw-bolder font-color">Overview</div>
+            <div className="col-12  fs-5 mb-6 fw-bolder ">{movie.overview}</div>
           </div>
         </div>
       </div>

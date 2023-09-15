@@ -36,6 +36,10 @@ const movieSlice = createSlice({
       state.favorites = [...state.favorites, action.payload];
     },
 
+    setFavorites: (state) => {
+      state.favorites = [];
+    },
+
     getPagePopular: (state, action) => {
       state.pagination.pagePopular = action.payload;
     },
@@ -57,5 +61,6 @@ export const {
   getPageRate,
   getPageUpCom,
   getFavorites,
+  setFavorites,
 } = movieSlice.actions;
 export default movieSlice.reducer;

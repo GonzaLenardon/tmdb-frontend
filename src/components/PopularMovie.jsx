@@ -22,7 +22,9 @@ export const PopularMovie = () => {
   return (
     <>
       <div className="container-fluid">
-        <p className="fs-1 fw-bolder text-warning text-center">Popular</p>
+        <p className="display-1 fw-bolder text-warning text-center mt-3">
+          Popular
+        </p>
         <Swiper
           effect={"coverflow"}
           grabCursor={true}

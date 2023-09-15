@@ -4,7 +4,7 @@ import { ButtonUser } from "./ButtonUser";
 
 export const Navbar = () => {
   return (
-    <nav className="navbar navbar-dark bg-dark sticky-top">
+    <nav className="navbar navbar-dark bg-dark sticky-top ">
       <div className="container-fluid my-3">
         <Link to={"/"}>
           <img
