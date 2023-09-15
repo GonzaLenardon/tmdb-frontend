@@ -18,16 +18,16 @@ export const NavPopular = () => {
       {numpage < 2 ? (
         <button
           type="button"
-          className="btn btn-outline-info"
+          className="btn btn-outline-info border-5"
           disabled
           onClick={() => handlePagination(false)}
         >
-          Prev
+          {" << Prev"}
         </button>
       ) : (
         <button
           type="button"
-          className="btn btn-outline-info"
+          className="btn btn-outline-info border-5"
           onClick={() => handlePagination(false)}
         >
           Prev
@@ -38,7 +38,7 @@ export const NavPopular = () => {
 
       <button
         type="button"
-        className="btn btn-outline-info"
+        className="btn btn-outline-info border-5"
         onClick={() => handlePagination(true)}
       >
         Next

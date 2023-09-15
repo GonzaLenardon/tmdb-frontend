@@ -24,7 +24,9 @@ export const UpComMovie = () => {
   return (
     <>
       <div className="container-fluid ">
-        <p className="fs-1 fw-bolder text-warning text-center">Up Comming</p>
+        <p className="display-1 fw-bolder text-warning text-center">
+          Up Comming
+        </p>
         <Swiper
           effect={"coverflow"}
           grabCursor={true}
@@ -49,8 +51,8 @@ export const UpComMovie = () => {
               </SwiperSlide>
             </>
           ))}
+          <NavUpCom />
         </Swiper>
-        <NavUpCom />
       </div>
     </>
   );

@@ -8,6 +8,8 @@ import { useEffect } from "react";
 import { setUser } from "./redux/slice/userSlice";
 import { useDispatch } from "react-redux";
 import { Favorites } from "./pages/Favorites";
+import { Home } from "./pages/Home";
+import { Borrar } from "./pages/Borrar";
 
 function App() {
   const dispatch = useDispatch();

@@ -24,7 +24,9 @@ export const RateMovie = () => {
   return (
     <>
       <div className="container-fluid ">
-        <p className="fs-1 fw-bolder text-warning text-center">Top Rated</p>
+        <p className="display-1 fw-bolder text-warning text-center mt-3">
+          Top Rated
+        </p>
         <Swiper
           effect={"coverflow"}
           grabCursor={true}
@@ -38,7 +40,7 @@ export const RateMovie = () => {
             modifier: 1,
             slideShadows: true,
           }}
-          pagination={true}
+          pagination={false}
           modules={[EffectCoverflow, Pagination]}
           className="mySwiper"
         >
@@ -49,8 +51,8 @@ export const RateMovie = () => {
               </SwiperSlide>
             </>
           ))}
+          <NavRate />
         </Swiper>
-        <NavRate />
       </div>
     </>
   );

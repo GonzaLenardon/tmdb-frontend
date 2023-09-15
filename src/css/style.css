@@ -14,13 +14,52 @@
 }
 
 body {
-  background: linear-gradient(37deg, #0b7e9c, #317443, #393a4c);
+  background: rgb(2, 0, 36);
+  background: linear-gradient(
+      164deg,
+      rgba(2, 0, 36, 1) 0%,
+      rgba(75, 178, 204, 1) 27%,
+      rgba(142, 132, 199, 1) 89%
+    )
+    fixed;
+
+  background: rgb(110, 110, 66);
+
+  background: linear-gradient(35deg, rgb(195, 34, 55) 23%, rgb(68, 3, 106) 75%)
+    fixed;
+  background: linear-gradient(
+      162deg,
+      rgba(110, 110, 66, 1) 15%,
+      rgba(26, 76, 106, 0.9781162464985994) 58%
+    )
+    fixed;
+  background: rgb(7, 45, 47);
+  background: linear-gradient(
+      344deg,
+      rgba(7, 45, 47, 1) 11%,
+      rgba(106, 125, 157, 1) 46%,
+      rgba(43, 43, 40, 0.9781162464985994) 97%
+    )
+    fixed;
+}
+
+.details-movie {
+  height: 600px;
 }
 
 .form {
   background-color: #90cea1;
 }
 
+.font-size {
+  font-size: calc(1.525rem + 1.3vw);
+}
+
+.font-color {
+  color: rgb(0, 0, 0);
+  text-shadow: 1px 1px 1px #898e8e;
+  font-weight: bold;
+}
 .posterMovie {
   box-shadow: 5px 5px 5px #95c4d0;
 }
