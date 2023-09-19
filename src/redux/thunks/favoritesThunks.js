@@ -12,9 +12,15 @@ export const addFavorites = async (id, user) => {
       }),
     };
 
-    await fetch(`http://localhost:3000/favorites/${id}`, options);
+    const pet = await fetch(`http://localhost:3000/favorites/${id}`, options);
+    const response =
+      pet.status == "201"
+        ? { peticion: `success`, mensaje: "Add to Favorite" }
+        : { peticion: `info`, mensaje: `The movie exists in my Favorites` };
+    return response;
   } catch (error) {
-    console.log(error);
+    const response = { peticion: `warning`, mensaje: `An error has occurred` };
+    return response;
   }
 };
 

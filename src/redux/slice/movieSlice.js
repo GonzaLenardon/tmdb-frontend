@@ -6,6 +6,7 @@ const initialState = {
   upcomming: [],
   movie: [],
   favorites: [],
+  MsjFavorite: false,
   pagination: {
     pagePopular: 1,
     pageRate: 1,
@@ -49,6 +50,10 @@ const movieSlice = createSlice({
     getPageUpCom: (state, action) => {
       state.pagination.pageUpcom = action.payload;
     },
+
+    setMsgFavorite: (state, action) => {
+      state.MsjFavorite = action.payload;
+    },
   },
 });
 
@@ -62,5 +67,6 @@ export const {
   getPageUpCom,
   getFavorites,
   setFavorites,
+  setMsgFavorite,
 } = movieSlice.actions;
 export default movieSlice.reducer;
