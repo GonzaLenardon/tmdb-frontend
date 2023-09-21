@@ -1,25 +1,38 @@
 import { useNavigate } from "react-router";
 import { useSelector, useDispatch } from "react-redux";
-import { addFavorites } from "../redux/thunks/favoritesThunks";
-import { setMsgFavorite } from "../redux/slice/movieSlice";
+import { addFavorites, removeFavorites } from "../redux/thunks/favoritesThunks";
+import {
+  setMsgFavorite,
+  setResetFavorites,
+  setFavorites,
+} from "../redux/slice/movieSlice";
 
 export const MovieCard = ({ movie, favorite }) => {
   const email = useSelector((state) => state.user.email);
+
+  // const favorites = useSelector((state) => state.movie.favorites);
+
   const dispatch = useDispatch();
   const navigator = useNavigate();
+  const resetFavorites = useSelector((state) => state.movie.resetFavorites);
 
   const handleMovie = (id) => {
     navigator(`/movie/${id}`);
     console.log("movie", id);
   };
 
-  const handleFavorite = (idMovie) => {
-    addFavorites(idMovie, email).then((response) => {
+  const handleAction = (idMovie, action, tipo) => {
+    action(idMovie, email).then((response) => {
       dispatch(setMsgFavorite(response));
     });
 
     setTimeout(() => {
       dispatch(setMsgFavorite(""));
+      if (tipo == "del") {
+        dispatch(setFavorites([]));
+
+        dispatch(setResetFavorites(!resetFavorites));
+      }
     }, 4000);
   };
 
@@ -40,7 +53,7 @@ export const MovieCard = ({ movie, favorite }) => {
                 <button
                   type="button"
                   className="btn btn-danger  rounded-circle"
-                  onClick={() => handleFavorite(movie.id)}
+                  onClick={() => handleAction(movie.id, removeFavorites, "del")}
                 >
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
@@ -55,7 +68,7 @@ export const MovieCard = ({ movie, favorite }) => {
                 <button
                   type="button"
                   className="btn btn-warning rounded-circle"
-                  onClick={() => handleFavorite(movie.id)}
+                  onClick={() => handleAction(movie.id, addFavorites, "add")}
                 >
                   <svg
                     xmlns="http://www.w3.org/2000/svg"

@@ -42,6 +42,7 @@ function App() {
         <Route path="/login" element={<Login />} />
         <Route path="/movie/:id" element={<MoviePage />} />
         <Route path="/movie/favorites" element={<Favorites />} />
+        {/*  <Route path="*" element={<NotFound />} /> */}
       </Routes>
 
       {/*  <Home /> */}

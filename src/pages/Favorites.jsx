@@ -1,37 +1,33 @@
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 import { allFavorites, detailFavorites } from "../redux/thunks/favoritesThunks";
 import { useSelector } from "react-redux";
 import { useDispatch } from "react-redux";
 import { MovieCard } from "../common/MovieCard";
+import { ToastFavorite } from "../common/ToastFavorite";
 
 export const Favorites = () => {
   const user = useSelector((state) => state.user.email);
   const favorites = useSelector((state) => state.movie.favorites);
+  const msgFavorite = useSelector((state) => state.movie.MsjFavorite);
+  const resetFavorites = useSelector((state) => state.movie.resetFavorites);
 
   const dispatch = useDispatch();
-  const [movies, setMovies] = useState([]);
 
   useEffect(() => {
-    console.log("primero x aca");
     allFavorites(user)
-      .then((idsMoviesFavorites) => {
-        setMovies(idsMoviesFavorites);
-        console.log("Espero a que termine", movies);
+      .then((idsMovFav) => {
+        idsMovFav.map((el, i) => {
+          dispatch(detailFavorites(idsMovFav[i].Movie));
+        });
       })
 
       .catch((error) => console.log(error));
-  }, []);
-
-  useEffect(() => {
-    console.log("lasMOvies", movies);
-
-    movies.map((el, i) => {
-      dispatch(detailFavorites(movies[i].Movie));
-    });
-  }, [movies]);
+  }, [resetFavorites]);
 
   return (
     <>
+      {msgFavorite ? <ToastFavorite /> : ""}
+
       <div className="">
         <p className="display-1 fw-bolder text-warning text-center mt-3">
           Favorites
