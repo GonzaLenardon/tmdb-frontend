@@ -3,9 +3,6 @@ import { useSelector } from "react-redux";
 
 export const ToastFavorite = () => {
   const msgFavorite = useSelector((state) => state.movie.MsjFavorite);
-
-  console.log("dkfjldsfkjlasdkjf", msgFavorite);
-
   toast[msgFavorite.peticion](msgFavorite.mensaje);
 
   return (

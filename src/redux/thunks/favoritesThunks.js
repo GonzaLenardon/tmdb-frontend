@@ -35,8 +35,8 @@ export const allFavorites = async (user) => {
   }
 };
 
-export const delFavorites = async (id, user) => {
-  console.log("dddddddddd", id, "user", user);
+export const removeFavorites = async (idMovie, user) => {
+  console.log("dddddddddd", idMovie, "user", user);
   try {
     const options = {
       method: "DELETE",
@@ -47,9 +47,21 @@ export const delFavorites = async (id, user) => {
       }),
     };
 
-    await fetch(`http://localhost:3000/favorites/${id}`, options);
+    const peticion = await fetch(
+      `http://localhost:3000/favorites/remove/${idMovie}`,
+      options
+    );
+    const response =
+      peticion.status == "201"
+        ? { peticion: `success`, mensaje: "Movie remove to Favorite" }
+        : {
+            peticion: `warning`,
+            mensaje: `Could not remove the movie from favorites`,
+          };
+    return response;
   } catch (error) {
-    console.log(error);
+    const response = { peticion: `warning`, mensaje: `An error has occurred` };
+    return response;
   }
 };
 

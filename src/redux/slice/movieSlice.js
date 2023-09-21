@@ -6,7 +6,9 @@ const initialState = {
   upcomming: [],
   movie: [],
   favorites: [],
+
   MsjFavorite: false,
+  resetFavorites: true,
   pagination: {
     pagePopular: 1,
     pageRate: 1,
@@ -54,6 +56,13 @@ const movieSlice = createSlice({
     setMsgFavorite: (state, action) => {
       state.MsjFavorite = action.payload;
     },
+
+    setIdMovieFavorites: (state, action) => {
+      state.idMovieFavorites = action.payload;
+    },
+    setResetFavorites: (state, action) => {
+      state.resetFavorites = action.payload;
+    },
   },
 });
 
@@ -68,5 +77,7 @@ export const {
   getFavorites,
   setFavorites,
   setMsgFavorite,
+
+  setResetFavorites,
 } = movieSlice.actions;
 export default movieSlice.reducer;
