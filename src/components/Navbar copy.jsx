@@ -9,7 +9,7 @@ export const Navbar = () => {
 
   return (
     <nav className="navbar navbar-expand-sm  navbar-dark bg-dark sticky-top ">
-      <div className="container-fluid" id="home">
+      <div className="container-fluid">
         <div className="navbar-brand">
           <Link to={"/"}>
             <img
@@ -18,10 +18,6 @@ export const Navbar = () => {
               alt="Bootstrap"
               height="auto"
               width="100%"
-              data-bs-toggle="collapse"
-              data-bs-target="#navbarSupportedContent"
-              aria-expanded="false"
-              aria-controls="navbarSupportedContent"
             />
           </Link>
         </div>
@@ -53,35 +49,33 @@ export const Navbar = () => {
 
           <ul className="navbar-nav ms-auto">
             {!logged ? (
-              <>
-                <li className="nav-item d-sm-none mx-sm-5">
-                  <Link to={"/signup"}>
-                    <button
-                      className="btn btn-warning col-12"
-                      type="button"
-                      data-bs-toggle="collapse"
-                      data-bs-target="#navbarSupportedContent"
-                      aria-expanded="false"
-                      aria-controls="navbarSupportedContent"
-                    >
-                      SignUp
-                    </button>
-                  </Link>
-                </li>
-
-                <li className="nav-item d-none d-sm-block mx-sm-5">
-                  <Link to={"/signup"}>
-                    <button className="btn btn-warning col-12" type="button">
-                      SignUp
-                    </button>
-                  </Link>
-                </li>
-              </>
+              <li className="nav-item  mx-sm-5">
+                <Link to={"/signup"}>
+                  <a
+                    href=""
+                    className="btn btn-warning col-12"
+                    role="button"
+                    aria-current="page"
+                    aria-disabled="true"
+                    aria-expanded="false"
+                  >
+                    SignUp
+                  </a>
+                </Link>
+              </li>
             ) : (
               ""
             )}
 
-            <ButtonUser />
+            <li className="nav-item my-3 my-md-0 mx-sm-5">
+              <ButtonUser />
+            </li>
+
+            <li className="nav-item">
+              <a className="nav-link" href="#">
+                Contacto
+              </a>
+            </li>
           </ul>
         </div>
       </div>

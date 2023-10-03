@@ -18,6 +18,7 @@ export const MovieCard = ({ movie, favorite }) => {
 
   const handleMovie = (id) => {
     navigator(`/movie/${id}`);
+
     console.log("movie", id);
   };
 

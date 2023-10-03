@@ -22,7 +22,7 @@ export const NavPopular = () => {
           disabled
           onClick={() => handlePagination(false)}
         >
-          {" << Prev"}
+          Prev
         </button>
       ) : (
         <button

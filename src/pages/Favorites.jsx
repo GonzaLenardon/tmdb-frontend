@@ -28,8 +28,8 @@ export const Favorites = () => {
     <>
       {msgFavorite ? <ToastFavorite /> : ""}
 
-      <div className="">
-        <p className="display-1 fw-bolder text-warning text-center mt-3">
+      <div id="favorite">
+        <p className="display-1 fw-bolder text-warning text-center mt-3 clasificacionMovie">
           Favorites
         </p>
       </div>

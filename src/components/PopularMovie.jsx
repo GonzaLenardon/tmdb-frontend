@@ -22,7 +22,7 @@ export const PopularMovie = () => {
   return (
     <>
       <div className="container-fluid">
-        <p className="display-1 fw-bolder text-warning text-center mt-3">
+        <p className="display-1 fw-bolder text-warning text-center mt-3 clasificacionMovie">
           Popular
         </p>
         <Swiper
