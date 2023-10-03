@@ -10,6 +10,7 @@ import { useDispatch } from "react-redux";
 import { Favorites } from "./pages/Favorites";
 import { Home } from "./pages/Home";
 import { Borrar } from "./pages/Borrar";
+import { Footer } from "./components/Footer";
 
 function App() {
   const dispatch = useDispatch();
@@ -44,6 +45,7 @@ function App() {
         <Route path="/movie/favorites" element={<Favorites />} />
         {/*  <Route path="*" element={<NotFound />} /> */}
       </Routes>
+      <Footer />
 
       {/*  <Home /> */}
     </>

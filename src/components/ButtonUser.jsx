@@ -17,50 +17,95 @@ export const ButtonUser = () => {
   };
 
   return (
-    <>
+    <li className="nav-item my-3 my-md-0 mx-sm-5">
       {!logged ? (
         <Link to="/login">
-          <button type="button" className="btn btn-warning">
+          <button
+            className="btn btn-warning col-12 d-sm-none"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarSupportedContent"
+            aria-expanded="false"
+            aria-controls="navbarSupportedContent"
+          >
+            Login
+          </button>
+
+          <button
+            className="btn btn-warning col-12 d-none d-sm-block"
+            type="button"
+          >
             Login
           </button>
         </Link>
       ) : (
-        <div className="dropdown">
-          <button
-            className="btn btn-warning dropdown-toggle"
-            type="button"
-            data-bs-toggle="dropdown"
-            aria-expanded="false"
-          >
-            {logged}
-          </button>
-          <ul className="dropdown-menu">
-            <li>
-              <Link to="/movie/favorites">
-                <button className="dropdown-item" type="button">
-                  Favoritos
-                </button>
-              </Link>
-            </li>
-            <li>
-              <button className="dropdown-item" type="button"></button>
-            </li>
-            <li>
-              <button className="dropdown-item" type="button"></button>
-            </li>
+        <>
+          <div className="dropdown d-none d-sm-block">
+            <button
+              className="btn btn-warning dropdown-toggle col-12"
+              type="button"
+              data-bs-toggle="dropdown"
+              aria-expanded="false"
+            >
+              {logged}
+            </button>
 
-            <li>
+            <ul className="dropdown-menu">
+              <li>
+                <Link to="/movie/favorites">
+                  <button className="dropdown-item" type="button">
+                    Favoritos
+                  </button>
+                </Link>
+              </li>
+
+              <li>
+                <button
+                  className="dropdown-item"
+                  type="button"
+                  onClick={handlelogout}
+                >
+                  Logout
+                </button>
+              </li>
+            </ul>
+          </div>
+
+          <li className="nav-item d-sm-none">
+            <button className="btn btn-warning col-12" type="button">
+              {logged}
+            </button>
+          </li>
+
+          <li className="nav-item d-sm-none my-3">
+            <Link to="/movie/favorites">
               <button
-                className="dropdown-item"
+                className="btn btn-warning col-12 "
                 type="button"
-                onClick={handlelogout}
+                data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent"
+                aria-expanded="false"
+                aria-controls="navbarSupportedContent"
               >
-                Logout
+                Favoritos
               </button>
-            </li>
-          </ul>
-        </div>
+            </Link>
+          </li>
+          <li className="nav-item d-sm-none">
+            <button
+              className="btn btn-warning col-12"
+              type="button"
+              data-bs-toggle="collapse"
+              data-bs-target="#navbarSupportedContent"
+              aria-expanded="false"
+              aria-controls="navbarSupportedContent"
+              onClick={handlelogout}
+            >
+              Logout
+            </button>
+          </li>
+        </>
       )}
-    </>
+    </li>
   );
 };

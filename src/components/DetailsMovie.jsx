@@ -19,7 +19,7 @@ export const DetailsMovie = () => {
   return (
     <>
       {/* <div className="container-fluid text-body d-flex justify-content-center mb-5">*/}
-      <div className="container-sm mt-5">
+      <div className="container-sm mt-5" id="detailMovie vh-100">
         {/* <div className="row w-75 pt-5"> */}
         <div className="row d-flex justify-content-center">
           <div className="col-12 col-sm-6 col-lg-4  mb-5">

@@ -50,30 +50,37 @@ export const Login = () => {
         theme="colored"
         transition={Slide}
       />
-      <div className="container-fluid rounded form w-25 p-5 mt-5">
-        <form onSubmit={handelLogin}>
-          <div className="mb-3">
-            <label className="form-label">Email address</label>
-            <input
-              type="email"
-              className="form-control"
-              id="email"
-              aria-describedby="emailHelp"
-              {...email}
-            />
-          </div>
 
-          <div className="mb-3">
-            <label className="form-label">Password</label>
-            <input
-              type="password"
-              className="form-control"
-              id="Password"
-              {...password}
-            />
+      <div className="row vh-100">
+        <div className="col-10 col-sm-8 col-lg-4 py-5 mx-auto align-self-center h-75 ">
+          <div className="rounded-2 p-2 formulario p-5">
+            <form onSubmit={handelLogin}>
+              <div className="py-3">
+                <label className="form-label">Email address</label>
+                <input
+                  type="email"
+                  className="form-control"
+                  id="email"
+                  aria-describedby="emailHelp"
+                  {...email}
+                />
+              </div>
+
+              <div>
+                <label className="form-label">Password</label>
+                <input
+                  type="password"
+                  className="form-control"
+                  id="Password"
+                  {...password}
+                />
+              </div>
+              <div className="text-center mt-5">
+                <button className="btn btn-primary">Login</button>
+              </div>
+            </form>
           </div>
-          <button className="btn btn-primary">Submit</button>
-        </form>
+        </div>
       </div>
     </>
   );

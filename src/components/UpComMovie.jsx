@@ -24,7 +24,7 @@ export const UpComMovie = () => {
   return (
     <>
       <div className="container-fluid ">
-        <p className="display-1 fw-bolder text-warning text-center">
+        <p className="display-1 fw-bolder text-warning text-center mt-3 clasificacionMovie">
           Up Comming
         </p>
         <Swiper

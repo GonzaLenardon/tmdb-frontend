@@ -19,7 +19,7 @@ export const NavUpCom = () => {
       {numpage < 2 ? (
         <button
           type="button"
-          className="btn btn-outline-info"
+          className="btn btn-outline-info border-5"
           disabled
           onClick={() => handlePagination(false)}
         >
@@ -28,7 +28,7 @@ export const NavUpCom = () => {
       ) : (
         <button
           type="button"
-          className="btn btn-outline-info"
+          className="btn btn-outline-info border-5"
           onClick={() => handlePagination(false)}
         >
           Prev
@@ -39,7 +39,7 @@ export const NavUpCom = () => {
 
       <button
         type="button"
-        className="btn btn-outline-info"
+        className="btn btn-outline-info border-5"
         onClick={() => handlePagination(true)}
       >
         Next
