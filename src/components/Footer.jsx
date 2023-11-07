@@ -1,24 +1,24 @@
 export const Footer = () => {
   return (
     <footer className="footer">
-      <div className="container">
-        <nav className="d-flex justify-content-evenly">
-          <a href="https://es-la.facebook.com/" target="blank">
-            <i className="bi bi-facebook fs-3"></i>
-          </a>
-          <a href="https://instagram.com" target="blank">
-            <i className="bi bi-instagram fs-3"></i>
+      <div className="container-fluid row">
+        <div className="">
+          <a
+            href="https://github.com/GonzaLenardon"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <i className="bi bi-github text-white fs-3 " />
           </a>
           <a
-            href="https://api.whatsapp.com/send?phone=5493434658043&text=Bienvenido a Unanime!!! Hacenos tu consulta y a la brevedad te respondermos"
-            target="blank"
+            href="https://www.linkedin.com/in/gonzalolenardon/"
+            target="_blank"
+            rel="noopener noreferrer"
           >
-            <i className="bi bi-whatsapp text-color-warning fs-3"></i>
+            <i className="bi bi-linkedin text-white fs-3 mx-2" />
           </a>
-          <a href="#">
-            <i className="bi bi-github text-warning fs-3" />
-          </a>
-        </nav>
+        </div>
+        <p className="copyright d-inline ">© Copyright Gonzalo Lenardon 2023</p>
       </div>
     </footer>
   );

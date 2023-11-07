@@ -18,6 +18,7 @@ export const HomePage = () => {
   return (
     <>
       {msgFavorite ? <ToastFavorite /> : ""}
+
       <RateMovie />
       <PopularMovie />
       <UpComMovie />

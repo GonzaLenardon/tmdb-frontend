@@ -17,11 +17,11 @@ export const ButtonUser = () => {
   };
 
   return (
-    <li className="nav-item my-3 my-md-0 mx-sm-5">
+    <li className="nav-item mb-3 my-md-0 mx-md-2 mx-lg-5 pe-lg-5">
       {!logged ? (
-        <Link to="/login">
+        <Link to="/login" style={{ textDecoration: "none" }}>
           <button
-            className="btn btn-warning col-12 d-sm-none"
+            className="btn btn-warning col-12 d-md-none"
             type="button"
             data-bs-toggle="collapse"
             data-bs-target="#navbarSupportedContent"
@@ -32,7 +32,7 @@ export const ButtonUser = () => {
           </button>
 
           <button
-            className="btn btn-warning col-12 d-none d-sm-block"
+            className="btn btn-warning col-12 d-none d-md-block"
             type="button"
           >
             Login
@@ -40,7 +40,7 @@ export const ButtonUser = () => {
         </Link>
       ) : (
         <>
-          <div className="dropdown d-none d-sm-block">
+          <div className="dropdown d-none d-md-block">
             <button
               className="btn btn-warning dropdown-toggle col-12"
               type="button"
@@ -71,13 +71,13 @@ export const ButtonUser = () => {
             </ul>
           </div>
 
-          <li className="nav-item d-sm-none">
+          <li className="nav-item d-md-none">
             <button className="btn btn-warning col-12" type="button">
               {logged}
             </button>
           </li>
 
-          <li className="nav-item d-sm-none my-3">
+          <li className="nav-item d-md-none my-3">
             <Link to="/movie/favorites">
               <button
                 className="btn btn-warning col-12 "
@@ -91,7 +91,7 @@ export const ButtonUser = () => {
               </button>
             </Link>
           </li>
-          <li className="nav-item d-sm-none">
+          <li className="nav-item d-md-none">
             <button
               className="btn btn-warning col-12"
               type="button"

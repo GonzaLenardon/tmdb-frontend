@@ -7,12 +7,11 @@ const UseInput = () => {
     setValue(e.target.value);
   };
 
-  const onreset = () => {
-    console.log("pasa x aca");
+  const onReset = () => {
     setValue("");
   };
 
-  return { value, onChange, onreset };
+  return { value, onChange, onReset };
 };
 
 export default UseInput;

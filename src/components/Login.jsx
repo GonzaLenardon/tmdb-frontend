@@ -5,6 +5,7 @@ import { login } from "../redux/thunks/userThunks";
 import { useDispatch } from "react-redux";
 import { setUser } from "../redux/slice/userSlice";
 import { useNavigate } from "react-router";
+import { Link } from "react-router-dom";
 
 export const Login = () => {
   const email = UseInput();
@@ -51,12 +52,13 @@ export const Login = () => {
         transition={Slide}
       />
 
-      <div className="row vh-100">
+      <div className="vh-100">
         <div className="col-10 col-sm-8 col-lg-4 py-5 mx-auto align-self-center h-75 ">
+          <p className="display-4 fw-bolder text-center user">Login</p>
           <div className="rounded-2 p-2 formulario p-5">
             <form onSubmit={handelLogin}>
               <div className="py-3">
-                <label className="form-label">Email address</label>
+                <label className="form-label">Email address * </label>
                 <input
                   type="email"
                   className="form-control"
@@ -66,8 +68,8 @@ export const Login = () => {
                 />
               </div>
 
-              <div>
-                <label className="form-label">Password</label>
+              <div className="mb-5">
+                <label className="form-label">Password *</label>
                 <input
                   type="password"
                   className="form-control"
@@ -75,8 +77,19 @@ export const Login = () => {
                   {...password}
                 />
               </div>
-              <div className="text-center mt-5">
-                <button className="btn btn-primary">Login</button>
+
+              <div className="d-flex justify-content-center">
+                <button className="btn btn-user fw-medium fs-5 mx-5 w-50">
+                  Login
+                </button>
+              </div>
+
+              <div className="d-flex justify-content-end">
+                <Link to={"/"}>
+                  <button className="btn btn-outline-warning fs-6">
+                    Cancel
+                  </button>
+                </Link>
               </div>
             </form>
           </div>

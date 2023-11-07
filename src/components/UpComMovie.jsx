@@ -24,7 +24,7 @@ export const UpComMovie = () => {
   return (
     <>
       <div className="container-fluid ">
-        <p className="display-1 fw-bolder text-warning text-center mt-3 clasificacionMovie">
+        <p className="fw-bolder text-warning text-center mt-3 clasificacionMovie">
           Up Comming
         </p>
         <Swiper
@@ -45,11 +45,9 @@ export const UpComMovie = () => {
           className="mySwiper"
         >
           {upcomming.map((movie) => (
-            <>
-              <SwiperSlide key={movie.id}>
-                <MovieCard key={movie.id} movie={movie} />
-              </SwiperSlide>
-            </>
+            <SwiperSlide key={movie.id}>
+              <MovieCard key={movie.id} movie={movie} />
+            </SwiperSlide>
           ))}
           <NavUpCom />
         </Swiper>

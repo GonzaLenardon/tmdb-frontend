@@ -28,7 +28,9 @@ export const MoviePage = () => {
             </div>
           </div>
         </> */
+
         <>
+          {" "}
           <ActorsMovie />
         </>
       )}

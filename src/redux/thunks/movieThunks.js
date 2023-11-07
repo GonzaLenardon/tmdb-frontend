@@ -115,3 +115,26 @@ export const Actors = (idMovie) => async (dispatch) => {
     })
     .catch((err) => console.error(err));
 };
+
+export const searchMovie = async (movie) => {
+  console.log("esto es lo que llega", movie);
+  const options = {
+    method: "GET",
+    headers: {
+      accept: "application/json",
+      Authorization: import.meta.env.VITE_TOKEN,
+    },
+  };
+  const url = `https://api.themoviedb.org/3/search/movie?query=${movie}&include_adult=false&language=en-US&page=1`;
+  /*Esta es una manera de realizar la peticion fetch */
+  return fetch(url, options)
+    .then((response) => response.json())
+    .then((resp) => resp)
+    .catch((error) => error);
+
+  /* y esta es la otra manera con await fetch 
+  
+  const peticion = await fetch(url, options);
+  const respuesta = await peticion.json();
+  return respuesta; */
+};

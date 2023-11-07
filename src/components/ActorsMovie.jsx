@@ -7,7 +7,8 @@ export const ActorsMovie = () => {
 
   return (
     <>
-      <div className="container-sm px-5 ">
+      <div className="container-sm px-md-5 ">
+        <p className="display-4 fw-bolder cast">Cast</p>
         <div className="row justify-content-between">
           {actor.map((actor) => (
             <ActorCard key={actor.id} actor={actor} />

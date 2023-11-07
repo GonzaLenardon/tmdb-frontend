@@ -22,10 +22,11 @@ export const PopularMovie = () => {
   return (
     <>
       <div className="container-fluid">
-        <p className="display-1 fw-bolder text-warning text-center mt-3 clasificacionMovie">
+        <p className="fw-bolder text-warning text-center mt-3 clasificacionMovie">
           Popular
         </p>
         <Swiper
+          key={popular}
           effect={"coverflow"}
           grabCursor={true}
           centeredSlides={true}
@@ -43,13 +44,11 @@ export const PopularMovie = () => {
           className="mySwiper"
         >
           {popular.map((movie) => (
-            <>
-              <SwiperSlide key={movie.id}>
-                <MovieCard key={movie.id} movie={movie} />
-              </SwiperSlide>
-            </>
+            <SwiperSlide key={movie.id}>
+              <MovieCard key={movie.id} movie={movie} />
+            </SwiperSlide>
           ))}
-          <NavPopular />
+          <NavPopular key={"NavPopular"} />
         </Swiper>
       </div>
     </>

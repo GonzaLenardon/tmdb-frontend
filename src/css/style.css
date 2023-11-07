@@ -1,4 +1,4 @@
-.bgimage {
+/* .bgimage {
   width: 100%;
   height: 40%;
   opacity: 0.3;
@@ -12,57 +12,113 @@
   background-repeat: no-repeat;
   opacity: 0.2;
 }
+ */
 
 body {
-  background: rgb(2, 0, 36);
-  background: linear-gradient(
-      164deg,
-      rgba(2, 0, 36, 1) 0%,
-      rgba(75, 178, 204, 1) 27%,
-      rgba(142, 132, 199, 1) 89%
-    )
-    fixed;
-
-  background: rgb(110, 110, 66);
-
-  background: linear-gradient(35deg, rgb(195, 34, 55) 23%, rgb(68, 3, 106) 75%)
-    fixed;
-  background: linear-gradient(
-      162deg,
-      rgba(110, 110, 66, 1) 15%,
-      rgba(26, 76, 106, 0.9781162464985994) 58%
-    )
-    fixed;
   background: rgb(7, 45, 47);
   background: linear-gradient(
       344deg,
       rgba(7, 45, 47, 1) 11%,
-      rgba(106, 125, 157, 1) 46%,
+      rgb(34, 43, 57) 46%,
       rgba(43, 43, 40, 0.9781162464985994) 97%
     )
     fixed;
 }
 
+.btn-favorite:hover .msg-popo {
+  opacity: 1;
+  bottom: -35px;
+}
+
+.btn-popularidad {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  position: absolute;
+  top: 65%;
+  border: 0;
+  left: 0px;
+  opacity: 0.8;
+  color: black;
+  font-weight: bold;
+}
+
+.bg-image {
+  position: absolute;
+  top: 10px;
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+  opacity: 0.1;
+}
+
+.btn-favorite {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  position: absolute;
+  top: 0px;
+  border: 0;
+  margin-top: -15px;
+  right: 0px;
+  z-index: 1;
+  background: linear-gradient(
+    45deg,
+    rgba(74, 207, 242, 1) 48%,
+    rgba(42, 137, 203, 1) 76%
+  );
+}
+
+.btn-favorite:hover {
+  background: #78bcd2;
+  transform: scale(1.1);
+  transition: all ease-out 0.5s;
+}
+
+.btn-favorite .msg-popo {
+  background-color: #000;
+  color: rgba(74, 207, 242, 1);
+  font-weight: bold;
+  width: 110px;
+}
+
 .clasificacionMovie {
+  font-size: 3rem;
   text-shadow: 5px 5px 5px #f15c05;
+}
+
+.del {
+  font-weight: bold;
+  background: rgb(234, 159, 30);
+  background: linear-gradient(
+    16deg,
+    rgb(216, 106, 21) 30%,
+    rgba(251, 60, 1, 1) 87%
+  );
+}
+
+.del:hover {
+  background: #ffc107;
 }
 
 .details-movie {
   height: 600px;
 }
 
-.form {
-  background-color: #90cea1;
+.font-color {
+  color: rgb(0, 0, 0);
+  text-shadow: 1px 1px 1px #898e8e;
+  font-weight: bold;
 }
 
 .font-size {
   font-size: calc(1.525rem + 1.3vw);
 }
 
-.font-color {
-  color: rgb(0, 0, 0);
-  text-shadow: 1px 1px 1px #898e8e;
-  font-weight: bold;
+.form {
+  background-color: #90cea1;
 }
 
 .formulario {
@@ -75,12 +131,6 @@ body {
   color: antiquewhite;
 }
 
-.size-form {
-  margin-top: 15%;
-
-  height: 100%;
-  background-color: #90cea1;
-}
 .footer {
   display: flex;
   height: 6rem;
@@ -89,17 +139,88 @@ body {
   background-color: black;
 }
 
+.size-form {
+  margin-top: 15%;
+
+  height: 100%;
+  background-color: #90cea1;
+}
+
+.msg-popo {
+  background-color: rgba(255, 140, 0, 1);
+  color: rgb(11, 11, 11);
+  font-size: 0.9rem;
+  font-family: "Times New Roman", Times, serif;
+  width: 90px;
+  padding: 5px;
+  border-radius: 5px;
+  position: absolute;
+  left: 0px;
+  bottom: 0px;
+  opacity: 0;
+  transition: all ease 0.5s;
+}
+
+.btn-popularidad:hover {
+  opacity: 1;
+}
+
+.btn-popularidad:hover .msg-popo {
+  opacity: 1;
+  bottom: -35px;
+}
+
+.btn-popularidad-movie {
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  border: 0;
+  position: absolute;
+  bottom: -15px;
+  left: 2px;
+  opacity: 0.8;
+  color: black;
+  font-weight: bold;
+}
+
+.btn-popularidad-movie:hover .msg-popo {
+  opacity: 1;
+  bottom: -35px;
+  left: 0px;
+}
+
 .posterMovie {
   box-shadow: 5px 5px 5px #95c4d0;
 }
 
+.text-overview {
+  font-size: 1.5rem;
+}
+
 .titleMovie {
-  color: rgb(18, 48, 56);
-  text-shadow: 5px 5px 5px #0b7e9c;
+  font-size: 2.5rem;
+  text-shadow: 5px 5px 5px #f67d04;
+}
+
+.cast {
+  color: rgb(56, 170, 201);
+  text-shadow: 2px 2px rgb(84, 204, 255);
+  filter: blur(0.9px);
+}
+
+.user {
+  color: rgb(84, 204, 255);
+  text-shadow: 3px 3px rgb(242, 246, 245);
+  filter: blur(0.7px);
+}
+
+.btn-user {
+  color: rgb(0, 82, 117);
+  background: linear-gradient(70deg, #51d9ff, #90cea1);
 }
 
 .angled-gradient {
-  background: linear-gradient(70deg, #00b3e5, #90cea1);
+  background: linear-gradient(70deg, #51d9ff, #90cea1);
 }
 
 .navbar-dark .navbar-toggler {
@@ -110,4 +231,32 @@ body {
 .navbar-dark .navbar-toggler:hover {
   --bs-navbar-toggler-icon-bg: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba%28245, 255, 245, 0.75%29' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
   opacity: 0.35;
+}
+
+.subtitle {
+  font-size: 1.8rem;
+  text-shadow: 2px 3px #356e72;
+  color: white;
+}
+.up {
+  width: 30px;
+  height: 30px;
+  position: fixed;
+  padding: 0;
+  border-radius: 50%;
+  right: 20px;
+  bottom: 35px;
+  z-index: 999;
+  opacity: 1;
+  transition: all ease 1.5s;
+}
+
+.up-hidden {
+  opacity: 0;
+  visibility: hidden;
+}
+
+.copyright {
+  color: white;
+  font-size: 0.8rem;
 }

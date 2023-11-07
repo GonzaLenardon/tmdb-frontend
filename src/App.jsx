@@ -8,9 +8,9 @@ import { useEffect } from "react";
 import { setUser } from "./redux/slice/userSlice";
 import { useDispatch } from "react-redux";
 import { Favorites } from "./pages/Favorites";
-import { Home } from "./pages/Home";
-import { Borrar } from "./pages/Borrar";
 import { Footer } from "./components/Footer";
+import SearchMovie from "./components/SearchMovie";
+import { ButtonUp } from "./components/ButtonUp";
 
 function App() {
   const dispatch = useDispatch();
@@ -27,27 +27,23 @@ function App() {
     const peticion = await fetch(`http://localhost:3000/user/me`, {
       credentials: "include",
     });
-    console.log(peticion);
     const res = await peticion.json();
-    console.log(res);
     dispatch(setUser({ name: res.name, email: res.email }));
   };
 
   return (
     <>
       <Navbar />
-
+      <ButtonUp />
       <Routes>
         <Route path="/" element={<HomePage />} />
         <Route path="/signup" element={<Signup />} />
         <Route path="/login" element={<Login />} />
         <Route path="/movie/:id" element={<MoviePage />} />
         <Route path="/movie/favorites" element={<Favorites />} />
-        {/*  <Route path="*" element={<NotFound />} /> */}
+        <Route path="/movie/search" element={<SearchMovie />} />
       </Routes>
       <Footer />
-
-      {/*  <Home /> */}
     </>
   );
 }

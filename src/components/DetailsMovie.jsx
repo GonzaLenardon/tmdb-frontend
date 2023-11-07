@@ -10,6 +10,9 @@ export const DetailsMovie = () => {
   const gen = movie.genres || [];
   const dispatch = useDispatch();
   const genero = [];
+  const country = movie.production_countries?.[0] || [];
+  const vote_average = Math.round(movie.vote_average * 10) || "";
+  const background = movie.poster_path;
 
   useEffect(() => {
     dispatch(MovieId(id));
@@ -18,50 +21,60 @@ export const DetailsMovie = () => {
 
   return (
     <>
-      {/* <div className="container-fluid text-body d-flex justify-content-center mb-5">*/}
-      <div className="container-sm mt-5" id="detailMovie vh-100">
-        {/* <div className="row w-75 pt-5"> */}
-        <div className="row d-flex justify-content-center">
-          <div className="col-12 col-sm-6 col-lg-4  mb-5">
-            <img
-              src={`https://image.tmdb.org/t/p/w400/${movie.poster_path}`}
-              className="rounded mx-auto img-fluid posterMovie"
-              alt="imagen"
-            />
-          </div>
-
-          <div className="col col-sm-6 col-lg-8 d-flex flex-column justify-content-center mb-5">
-            <div className="col-12 display-2 fw-bolder titleMovie ">
-              {movie.original_title}
+      <div className="container-fluid text-body d-flex justify-content-center mb-5 position-relative">
+        <div
+          className="bg-image"
+          style={{
+            backgroundImage: `url(https://image.tmdb.org/t/p/w400/${background})`,
+          }}
+        />
+        <div className="container-sm my-5" id="detailMovie">
+          <div className="row d-flex justify-content-center">
+            <div className="position-relative col-12 col-md-6 col-lg-4 p-1 mb-5 d-flex align-items-strech    justify-content-center">
+              <img
+                src={`https://image.tmdb.org/t/p/w400/${movie.poster_path}`}
+                className="rounded img-fluid posterMovie "
+                alt="imagen"
+              />
+              <button className="btn-popularidad-movie bg-warning fs-5">
+                {vote_average}%<div className="msg-popo">popularity</div>
+              </button>
             </div>
 
-            <div className="col-12 fs-2 fw-bolder font-color">
-              {
-                `${movie.release_date}`.slice(0, 4)
-                /* ${movie.release_date}`.split("-").reverse().join("-") */
-              }
-            </div>
+            <div className="col col-md-6 col-lg-6 px-md-5 flex-column d-flex justify-content-around mb-5">
+              <div className="col-12 fw-bolder text-warning titleMovie">
+                <p>{movie?.original_title || "title"}</p>
+              </div>
 
-            <div className="col-12 fs-2 fw-bolder font-color">
+              <p className="col-12 fw-bolder subtitle">
+                {
+                  `${movie?.release_date || "year"}`.slice(0, 4)
+                  /* ${movie.release_date}`.split("-").reverse().join("-") */
+                }
+                {" / "}
+                {country?.name || "contry"}
+              </p>
+
               {gen.map((gene) => {
                 genero.push(gene.name);
               })}
 
-              {`${genero}`.split(",").join("  /  ")}
-            </div>
+              <p className="col-12 fw-bolder subtitle">
+                {`${genero}`.split(",").join("  /  ")}
+              </p>
+              <p className="col-12 fw-bolder subtitle">
+                {Math.floor(movie?.runtime / 60) || "H"}h{":"}
+                {Math.floor(movie?.runtime % 60) || "M"}m
+              </p>
+              <p className="col-12 fw-bolder subtitle">Overview</p>
 
-            <div className="col-12 fs-2 fw-bolder font-color">Overview</div>
-            <div className="col-12  fs-5 mb-6 fw-bolder ">{movie.overview}</div>
+              <p className="col-12 fw-normal fs-5 text-white">
+                {movie.overview}
+              </p>
+            </div>
           </div>
         </div>
       </div>
-
-      {/*        <img
-          className="bgimage"
-          src={`https://image.tmdb.org/t/p/w400/` + movie.poster_path}
-          alt={movie.id}
-          />
-        */}
     </>
   );
 };
