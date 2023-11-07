@@ -9,7 +9,6 @@ import "../css/index.css";
 import { ratedMovie } from "../redux/thunks/movieThunks";
 import { EffectCoverflow, Pagination } from "swiper/modules";
 import { NavRate } from "../common/NavRate";
-import { Sniper } from "../common/sniper";
 
 export const RateMovie = () => {
   const dispatch = useDispatch();
@@ -23,11 +22,12 @@ export const RateMovie = () => {
 
   return (
     <>
-      <div className="container-fluid ">
-        <p className="display-1 fw-bolder text-warning text-center mt-3 clasificacionMovie">
+      <div className="container-fluid">
+        <p className="fw-bolder text-warning text-center mt-3 clasificacionMovie">
           Top Rated
         </p>
         <Swiper
+          key={"rateMovie"}
           effect={"coverflow"}
           grabCursor={true}
           centeredSlides={true}
@@ -44,12 +44,10 @@ export const RateMovie = () => {
           modules={[EffectCoverflow, Pagination]}
           className="mySwiper"
         >
-          {rated.map((movie) => (
-            <>
-              <SwiperSlide key={movie.id}>
-                <MovieCard key={movie.id} movie={movie} />
-              </SwiperSlide>
-            </>
+          {rated.map((movie, i) => (
+            <SwiperSlide key={i}>
+              <MovieCard key={movie.id} movie={movie} />
+            </SwiperSlide>
           ))}
           <NavRate />
         </Swiper>

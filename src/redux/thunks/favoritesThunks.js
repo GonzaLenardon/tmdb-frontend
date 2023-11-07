@@ -53,7 +53,7 @@ export const removeFavorites = async (idMovie, user) => {
     );
     const response =
       peticion.status == "201"
-        ? { peticion: `success`, mensaje: "Movie remove to Favorite" }
+        ? { peticion: `success`, mensaje: "Movie removed from Favorite" }
         : {
             peticion: `warning`,
             mensaje: `Could not remove the movie from favorites`,

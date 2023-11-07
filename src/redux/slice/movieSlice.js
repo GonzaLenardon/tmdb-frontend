@@ -6,7 +6,7 @@ const initialState = {
   upcomming: [],
   movie: [],
   favorites: [],
-
+  search: [],
   MsjFavorite: false,
   resetFavorites: true,
   pagination: {
@@ -63,6 +63,10 @@ const movieSlice = createSlice({
     setResetFavorites: (state, action) => {
       state.resetFavorites = action.payload;
     },
+
+    setSearch: (state, action) => {
+      state.search = action.payload;
+    },
   },
 });
 
@@ -77,6 +81,7 @@ export const {
   getFavorites,
   setFavorites,
   setMsgFavorite,
+  setSearch,
 
   setResetFavorites,
 } = movieSlice.actions;
