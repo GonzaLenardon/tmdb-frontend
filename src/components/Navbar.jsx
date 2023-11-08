@@ -25,7 +25,8 @@ export const Navbar = () => {
           <Link to={"/"}>
             <img
               className="img-fluid"
-              src="/public/logo.svg"
+              /* src="/public/logo.svg" */
+              src="../../public/logo.svg"
               alt="Bootstrap"
               width="100%"
               height="auto"
