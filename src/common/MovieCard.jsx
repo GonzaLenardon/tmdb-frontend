@@ -18,6 +18,7 @@ export const MovieCard = ({ movie, favorite }) => {
 
   const handleMovie = (id) => {
     navigator(`/movie/${id}`);
+    scrollTo(0, 0);
   };
 
   const handleAction = (idMovie, action, tipo, e) => {
