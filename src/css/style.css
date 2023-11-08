@@ -25,6 +25,12 @@ body {
     fixed;
 }
 
+.logotmdb {
+  background-image: url("public/logo.svg");
+  background-repeat: no-repeat;
+  width: 100%;
+}
+
 .btn-favorite:hover .msg-popo {
   opacity: 1;
   bottom: -35px;
