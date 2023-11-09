@@ -1,6 +1,6 @@
 import { getFavorites } from "../slice/movieSlice";
 
-const urlback = import.meta.env.VITE_TOKEN;
+const urlback = import.meta.env.URL_BACK;
 
 export const addFavorites = async (id, user) => {
   try {
