@@ -12,9 +12,10 @@ import { Footer } from "./components/Footer";
 import SearchMovie from "./components/SearchMovie";
 import { ButtonUp } from "./components/ButtonUp";
 
-const urlback = import.meta.env.URL_BACK;
 function App() {
   const dispatch = useDispatch();
+
+  const urlback = import.meta.env.URL_BACK;
 
   useEffect(() => {
     token();
