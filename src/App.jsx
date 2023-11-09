@@ -12,10 +12,10 @@ import { Footer } from "./components/Footer";
 import SearchMovie from "./components/SearchMovie";
 import { ButtonUp } from "./components/ButtonUp";
 
+const urlback = import.meta.env.URL_BACK;
+
 function App() {
   const dispatch = useDispatch();
-
-  const urlback = import.meta.env.URL_BACK;
 
   useEffect(() => {
     token();
@@ -26,7 +26,9 @@ function App() {
       .get("http://localhost:3000/user/me", { withCredentials: true })
       .then((res) => console.log(res.data)); */
 
-    const peticion = await fetch(`${urlback}/user/me`, {
+    console.log("url", urlback);
+
+    const peticion = await fetch(`https://servicetmdb.onrender.com/user/me`, {
       credentials: "include",
     });
     const res = await peticion.json();
