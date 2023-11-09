@@ -12,8 +12,8 @@ export const AddUser = async (user) => {
       }),
     };
 
-    const peticion = await fetch(`${urlback}user/add`, options);
-
+    const peticion = await fetch(`${urlback}/user/add`, options);
+       console.log("url", urlback)
     let result = "";
     if (peticion.ok) {
       const newUser = await peticion.json();
