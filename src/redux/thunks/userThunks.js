@@ -12,7 +12,7 @@ export const AddUser = async (user) => {
       }),
     };
 
-    const peticion = await fetch(`${urlback}/user/add`, options);
+    const peticion = await fetch(`${urlback}user/add`, options);
 
     let result = "";
     if (peticion.ok) {
