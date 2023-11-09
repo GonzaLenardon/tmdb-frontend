@@ -12,6 +12,7 @@ export const AddUser = async (user) => {
       }),
     };
 
+
     console.log("url", urlback);
     console.log("rutacompleta", `${urlback}/user/add`);
 
@@ -21,6 +22,10 @@ export const AddUser = async (user) => {
     );
 
     //    const peticion = await fetch(`http://localhost:3000/user/add`, options);
+
+
+    const peticion = await fetch(`{urlback}/user/add`, options);
+     
 
     let result = "";
     if (peticion.ok) {
@@ -57,6 +62,8 @@ export const login = async (user) => {
       `https://servicetmdb.onrender.com/user/login`,
       options
     );
+
+    const peticion = await fetch(`https://servicetmdb.onrender.com/user/login`, options);
 
     /*    const peticion = await fetch(`http://localhost:3000/user/login`, options);
      */
