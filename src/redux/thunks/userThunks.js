@@ -11,7 +11,7 @@ export const AddUser = async (user) => {
     };
 
     const peticion = await fetch(
-      `http://servicetmdb.onrender.com/user/add`,
+      `https://servicetmdb.onrender.com/user/add`,
       options
     );
     //    const peticion = await fetch(`http://localhost:3000/user/add`, options);
