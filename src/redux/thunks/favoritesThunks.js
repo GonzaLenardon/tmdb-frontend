@@ -1,7 +1,5 @@
 import { getFavorites } from "../slice/movieSlice";
 
-const urlback = import.meta.env.URL_BACK;
-
 export const addFavorites = async (id, user) => {
   try {
     const options = {
@@ -13,7 +11,10 @@ export const addFavorites = async (id, user) => {
       }),
     };
 
-    const pet = await fetch(`${urlback}/favorites/${id}`, options);
+    const pet = await fetch(
+      `https://servicetmdb.onrender.com/favorites/${id}`,
+      options
+    );
     const response =
       pet.status == "201"
         ? { peticion: `success`, mensaje: "Add to Favorite" }
@@ -28,7 +29,9 @@ export const addFavorites = async (id, user) => {
 export const allFavorites = async (user) => {
   console.log("user email", user);
   try {
-    const peticion = await fetch(`${urlback}/favorites/all/${user}`);
+    const peticion = await fetch(
+      `https://servicetmdb.onrender.com/favorites/all/${user}`
+    );
 
     const respuesta = await peticion.json();
     return respuesta;
@@ -49,7 +52,7 @@ export const removeFavorites = async (idMovie, user) => {
     };
 
     const peticion = await fetch(
-      `${urlback}/favorites/remove/${idMovie}`,
+      `https://servicetmdb.onrender.com/favorites/remove/${idMovie}`,
       options
     );
     const response =

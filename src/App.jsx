@@ -15,8 +15,6 @@ import { ButtonUp } from "./components/ButtonUp";
 function App() {
   const dispatch = useDispatch();
 
-  const urlback = import.meta.env.URL_BACK;
-
   useEffect(() => {
     token();
   }, []);
@@ -26,7 +24,7 @@ function App() {
       .get("http://localhost:3000/user/me", { withCredentials: true })
       .then((res) => console.log(res.data)); */
 
-    const peticion = await fetch(`${urlback}/user/me`, {
+    const peticion = await fetch(`https://servicetmdb.onrender.com/user/me`, {
       credentials: "include",
     });
     const res = await peticion.json();
