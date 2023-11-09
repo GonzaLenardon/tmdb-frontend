@@ -47,7 +47,13 @@ export const login = async (user) => {
       }),
     };
 
-    const peticion = await fetch(`http://localhost:3000/user/login`, options);
+    const peticion = await fetch(
+      `https://servicetmdb.onrender.com/user/login`,
+      options
+    );
+
+    /*    const peticion = await fetch(`http://localhost:3000/user/login`, options);
+     */
     let response = {};
 
     if (peticion.ok) {
@@ -80,7 +86,9 @@ export const logout = async () => {
       credentials: "include",
     };
 
-    await fetch("http://localhost:3000/user/logout", options);
+    await fetch("https://servicetmdb.onrender.com/user/logout", options);
+    /*     await fetch("http://localhost:3000/user/logout", options);
+     */
   } catch (error) {
     console.log(error);
   }
@@ -95,7 +103,9 @@ export const getUser = async (email) => {
     };
 
     const peticion = await fetch(
-      `http://localhost:3000/user/${email}`,
+      /* `http://localhost:3000/user/${email}`,
+       */
+      `https://servicetmdb.onrender.com/user/${email}`,
       options
     );
     const data = await peticion.json();

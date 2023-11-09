@@ -1,7 +1,6 @@
 import { getFavorites } from "../slice/movieSlice";
 
 export const addFavorites = async (id, user) => {
-  console.log("dddddddddd", id, "user", user);
   try {
     const options = {
       method: "POST",
@@ -36,7 +35,6 @@ export const allFavorites = async (user) => {
 };
 
 export const removeFavorites = async (idMovie, user) => {
-  console.log("dddddddddd", idMovie, "user", user);
   try {
     const options = {
       method: "DELETE",
