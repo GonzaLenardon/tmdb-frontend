@@ -103,7 +103,7 @@ export const getUser = async (email) => {
     };
 
     const peticion = await fetch(
-      /* config local
+      /*
        `http://localhost:3000/user/${email}`,
        */
       `https://servicetmdb.onrender.com/user/${email}`,
