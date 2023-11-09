@@ -1,5 +1,3 @@
-const urlback = import.meta.env.URL_BACK;
-
 export const AddUser = async (user) => {
   try {
     const options = {
@@ -11,9 +9,6 @@ export const AddUser = async (user) => {
         pass: user.pass,
       }),
     };
-
-    console.log("url", urlback);
-    console.log("rutacompleta", `${urlback}/user/add`);
 
     const peticion = await fetch(
       `https://servicetmdb.onrender.com/user/add`,
