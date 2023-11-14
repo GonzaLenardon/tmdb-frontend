@@ -38,7 +38,8 @@ export const DetailsMovie = () => {
                 alt="imagen"
               />
               <button className="btn-popularidad-movie bg-warning fs-5">
-                {vote_average}%<div className="msg-popo">popularity</div>
+                {vote_average}%
+                <div className="msg-popo-popularidad">popularity</div>
               </button>
             </div>
 
