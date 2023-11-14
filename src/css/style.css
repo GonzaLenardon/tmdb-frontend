@@ -1,18 +1,9 @@
-/* .bgimage {
+.box {
+  box-sizing: border-box;
   width: 100%;
-  height: 40%;
-  opacity: 0.3;
+  margin-left: 0;
+  margin-right: 0;
 }
-
-.divbgimage {
-  width: auto;
-  height: 1000px;
-  background-color: red;
-  background-size: cover;
-  background-repeat: no-repeat;
-  opacity: 0.2;
-}
- */
 
 body {
   background: rgb(7, 45, 47);
@@ -31,10 +22,10 @@ body {
   width: 100%;
 }
 
-.btn-favorite:hover .msg-popo {
+/* .btn-favorite:hover .msg-popo {
   opacity: 1;
   bottom: -35px;
-}
+} */
 
 .btn-popularidad {
   width: 50px;
@@ -60,6 +51,13 @@ body {
   opacity: 0.1;
 }
 
+.bg-formulario {
+  position: absolute;
+  top: 20%;
+  width: 100%;
+  height: 100%;
+}
+
 .btn-favorite {
   width: 50px;
   height: 50px;
@@ -77,36 +75,35 @@ body {
   );
 }
 
+.msg-popo-favorite {
+  background-color: #000;
+  border-radius: 5px;
+  color: rgba(74, 207, 242, 1);
+  width: 110px;
+  font-size: 0.9rem;
+  font-family: "Times New Roman", Times, serif;
+  padding: 5px;
+  position: absolute;
+  bottom: 0px;
+  right: 0px;
+  opacity: 0;
+  transition: all ease 1s;
+}
+
 .btn-favorite:hover {
   background: #78bcd2;
   transform: scale(1.1);
   transition: all ease-out 0.5s;
 }
 
-.btn-favorite .msg-popo {
-  background-color: #000;
-  color: rgba(74, 207, 242, 1);
-  font-weight: bold;
-  width: 110px;
+.btn-favorite:hover .msg-popo-favorite {
+  right: 50px;
+  opacity: 1;
 }
 
 .clasificacionMovie {
   font-size: 3rem;
   text-shadow: 5px 5px 5px #f15c05;
-}
-
-.del {
-  font-weight: bold;
-  background: rgb(234, 159, 30);
-  background: linear-gradient(
-    16deg,
-    rgb(216, 106, 21) 30%,
-    rgba(251, 60, 1, 1) 87%
-  );
-}
-
-.del:hover {
-  background: #ffc107;
 }
 
 .details-movie {
@@ -152,7 +149,9 @@ body {
   background-color: #90cea1;
 }
 
-.msg-popo {
+/* INICIO btn-popularidad */
+
+.msg-popo-popularidad {
   background-color: rgba(255, 140, 0, 1);
   color: rgb(11, 11, 11);
   font-size: 0.9rem;
@@ -164,17 +163,20 @@ body {
   left: 0px;
   bottom: 0px;
   opacity: 0;
-  transition: all ease 0.5s;
+  transition: all ease 1s;
 }
 
 .btn-popularidad:hover {
   opacity: 1;
 }
 
-.btn-popularidad:hover .msg-popo {
+.btn-popularidad:hover .msg-popo-popularidad {
   opacity: 1;
-  bottom: -35px;
+  left: 50px;
+  /*  bottom: -35px; */
 }
+
+/* FIN btn-popularidad */
 
 .btn-popularidad-movie {
   width: 70px;
@@ -266,3 +268,58 @@ body {
   color: white;
   font-size: 0.8rem;
 }
+
+/* INICIO btn-del */
+.btn-del {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  position: absolute;
+  top: 0px;
+  border: 0;
+  margin-top: -15px;
+  right: 0px;
+  z-index: 1;
+  font-weight: bold;
+  background: rgb(234, 159, 30);
+  background: linear-gradient(
+    16deg,
+    rgb(216, 106, 21) 30%,
+    rgba(251, 60, 1, 1) 87%
+  );
+}
+
+.btn-del:hover {
+  background: #ffc107;
+}
+
+.msg-popo-del {
+  /* background-color: #000; */
+
+  background: rgb(234, 159, 30);
+  background: linear-gradient(
+    16deg,
+    rgb(216, 106, 21) 30%,
+    rgba(251, 60, 1, 1) 87%
+  );
+
+  border-radius: 5px;
+  color: rgb(255, 251, 251);
+  width: 90px;
+  font-weight: bold;
+  font-size: 0.9rem;
+  font-family: "Times New Roman", Times, serif;
+  padding: 5px;
+  position: absolute;
+  bottom: 0px;
+  left: -40px;
+  opacity: 0;
+  transition: all ease 1s;
+}
+
+.btn-del:hover .msg-popo-del {
+  opacity: 1;
+  left: -90px;
+}
+
+/*  FIN btn-del */

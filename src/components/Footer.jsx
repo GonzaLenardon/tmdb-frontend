@@ -1,6 +1,6 @@
 export const Footer = () => {
   return (
-    <footer className="footer">
+    <footer className="footer ">
       <div className="container-fluid row">
         <div className="">
           <a

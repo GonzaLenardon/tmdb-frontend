@@ -11,20 +11,22 @@ const SearchMovie = () => {
   return (
     <>
       {msgFavorite ? <ToastFavorite /> : ""}
-      <p className="fw-bolder text-warning text-center mt-3 clasificacionMovie">
-        Search
-      </p>
+      <div className="min-vh-100">
+        <p className="fw-bolder text-warning text-center mt-3 clasificacionMovie">
+          Search
+        </p>
 
-      <div className="container ">
-        <div className="row">
-          {search.map((movie) => (
-            <div
-              className="                         col-6 col-sm-4 col-lg-2 p-2 position-relative"
-              key={movie.id}
-            >
-              <MovieCard movie={movie} />
-            </div>
-          ))}
+        <div className="container ">
+          <div className="row">
+            {search.map((movie) => (
+              <div
+                className="col-6 col-sm-4 col-lg-2 p-2 position-relative"
+                key={movie.id}
+              >
+                <MovieCard movie={movie} />
+              </div>
+            ))}
+          </div>
         </div>
       </div>
     </>

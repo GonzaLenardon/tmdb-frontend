@@ -4,8 +4,7 @@ const d = document,
 w.addEventListener("scroll", () => {
   const $bUp = d.querySelector("#bUp");
   const sc = w.scrollY || d.documentElement.scrollTop;
-
-  if (sc > 200) {
+  if (sc > 100) {
     $bUp.classList.remove("up-hidden");
   } else {
     $bUp.classList.add("up-hidden");

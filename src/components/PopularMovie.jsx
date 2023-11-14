@@ -48,7 +48,7 @@ export const PopularMovie = () => {
               <MovieCard key={movie.id} movie={movie} />
             </SwiperSlide>
           ))}
-          <NavPopular key={"NavPopular"} />
+          <NavPopular />
         </Swiper>
       </div>
     </>
