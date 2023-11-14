@@ -1,4 +1,3 @@
-import { useEffect } from "react";
 import { useSelector } from "react-redux";
 import { MovieCard } from "../common/MovieCard";
 import { ToastFavorite } from "../common/ToastFavorite";
@@ -6,7 +5,6 @@ import { ToastFavorite } from "../common/ToastFavorite";
 const SearchMovie = () => {
   const msgFavorite = useSelector((state) => state.movie.MsjFavorite);
   const search = useSelector((state) => state.movie.search);
-  console.log(search);
 
   return (
     <>

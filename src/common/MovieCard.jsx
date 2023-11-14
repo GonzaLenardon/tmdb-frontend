@@ -24,7 +24,6 @@ export const MovieCard = ({ movie, favorite }) => {
   const handleAction = (idMovie, action, tipo, e) => {
     action(idMovie, email).then((response) => {
       dispatch(setMsgFavorite(response));
-      console.log(e.target);
     });
 
     setTimeout(() => {
