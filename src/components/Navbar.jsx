@@ -19,7 +19,7 @@ export const Navbar = () => {
   };
 
   return (
-    <nav className="navbar navbar-expand-md navbar-dark bg-dark sticky-top position-relative ">
+    <nav className="navbar navbar-expand-md navbar-dark bg-black sticky-top position-relative py-3 ">
       <div className="container-fluid" id="up">
         <div className="navbar-brand col-8 col-md-4 col-xl-2">
           <Link to={"/"}>

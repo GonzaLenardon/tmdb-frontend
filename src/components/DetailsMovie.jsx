@@ -28,6 +28,7 @@ export const DetailsMovie = () => {
             backgroundImage: `url(https://image.tmdb.org/t/p/w400/${background})`,
           }}
         />
+
         <div className="container-sm my-5" id="detailMovie">
           <div className="row d-flex justify-content-center">
             <div className="position-relative col-12 col-md-6 col-lg-4 p-1 mb-5 d-flex align-items-strech    justify-content-center">

@@ -28,21 +28,23 @@ export const Favorites = () => {
     <>
       {msgFavorite ? <ToastFavorite /> : ""}
 
-      <div id="favorite">
-        <p className="display-1 fw-bolder text-warning text-center mt-3 clasificacionMovie">
-          Favorites
-        </p>
-      </div>
-
-      <div className="container mt-5">
-        <div className="row">
-          {favorites.map((movie) => (
-            <div key={movie.id} className="col-6 col-sm-4 col-lg-2 p-2">
-              <MovieCard key={movie.id} movie={movie} favorite={true} />;
-            </div>
-          ))}
+      <div className="container-fluid min-vh-100">
+        <div id="favorite">
+          <p className="display-1 fw-bolder text-warning text-center mt-3 clasificacionMovie">
+            Favorites
+          </p>
         </div>
-        ;
+
+        <div className="container mt-5">
+          <div className="row h-100">
+            {favorites.map((movie) => (
+              <div key={movie.id} className="col-6 col-sm-4 col-lg-2 p-2">
+                <MovieCard key={movie.id} movie={movie} favorite={true} />;
+              </div>
+            ))}
+          </div>
+          ;
+        </div>
       </div>
     </>
   );

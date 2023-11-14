@@ -24,7 +24,6 @@ export const MovieCard = ({ movie, favorite }) => {
   const handleAction = (idMovie, action, tipo, e) => {
     action(idMovie, email).then((response) => {
       dispatch(setMsgFavorite(response));
-      console.log(e.target);
     });
 
     setTimeout(() => {
@@ -49,7 +48,7 @@ export const MovieCard = ({ movie, favorite }) => {
 
         <button className="btn-popularidad bg-warning">
           {Math.round(movie.vote_average * 10)}%
-          <div className="msg-popo">popularity</div>
+          <div className="msg-popo-popularidad">popularity</div>
         </button>
 
         <div className="card-body">
@@ -66,7 +65,7 @@ export const MovieCard = ({ movie, favorite }) => {
               {favorite ? (
                 <button
                   type="button"
-                  className="btn-favorite del"
+                  className="btn-del"
                   onClick={() => handleAction(movie.id, removeFavorites, "del")}
                 >
                   <svg
@@ -77,7 +76,7 @@ export const MovieCard = ({ movie, favorite }) => {
                   >
                     <path d="M280-120q-33 0-56.5-23.5T200-200v-520h-40v-80h200v-40h240v40h200v80h-40v520q0 33-23.5 56.5T680-120H280Zm400-600H280v520h400v-520ZM360-280h80v-360h-80v360Zm160 0h80v-360h-80v360ZM280-720v520-520Z" />
                   </svg>
-                  <div className="msg-popo">delete</div>
+                  <div className="msg-popo-del">delete</div>
                 </button>
               ) : (
                 <>
@@ -95,7 +94,7 @@ export const MovieCard = ({ movie, favorite }) => {
                     >
                       <path d="m354-247 126-76 126 77-33-144 111-96-146-13-58-136-58 135-146 13 111 97-33 143ZM233-80l65-281L80-550l288-25 112-265 112 265 288 25-218 189 65 281-247-149L233-80Zm247-350Z" />
                     </svg>
-                    <div className="msg-popo">add to favorite</div>
+                    <div className="msg-popo-favorite">add to favorite</div>
                   </button>
                 </>
               )}
