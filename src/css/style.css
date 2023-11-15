@@ -191,7 +191,8 @@ body {
   font-weight: bold;
 }
 
-btn-popularidad-movie:hover .msg-popo-popularidad {
+
+.btn-popularidad-movie:hover .msg-popo-popularidad {
   opacity: 1;
   left: 50px;
 }
