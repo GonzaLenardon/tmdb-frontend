@@ -25,7 +25,7 @@ export const UpComMovie = () => {
     <>
       <div className="container-fluid ">
         <p className="fw-bolder text-warning text-center mt-3 clasificacionMovie">
-          UpComming
+          Upcoming
         </p>
         <Swiper
           effect={"coverflow"}
