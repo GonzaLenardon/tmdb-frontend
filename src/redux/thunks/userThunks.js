@@ -10,6 +10,7 @@ export const AddUser = async (user) => {
       }),
     };
 
+
     const peticion = await fetch(
       `https://servicetmdb.onrender.com/user/add`,
       options
@@ -48,10 +49,13 @@ export const login = async (user) => {
       }),
     };
 
+
     const peticion = await fetch(
       `https://servicetmdb.onrender.com/user/login`,
       options
     );
+
+    
 
     /*    const peticion = await fetch(`http://localhost:3000/user/login`, options);
      */

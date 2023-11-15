@@ -191,10 +191,12 @@ body {
   font-weight: bold;
 }
 
+
 .btn-popularidad-movie:hover .msg-popo-popularidad {
   opacity: 1;
   left: 50px;
 }
+
 
 .posterMovie {
   box-shadow: 5px 5px 5px #95c4d0;
